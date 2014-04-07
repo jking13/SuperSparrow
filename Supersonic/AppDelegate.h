@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//testing source control
-//test 2
+//John finished setting up source Control!
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
