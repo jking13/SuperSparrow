@@ -16,14 +16,13 @@
 		5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F72818F2403D009EEB77 /* AppDelegate.m */; };
 		5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5232F72A18F2403D009EEB77 /* Main.storyboard */; };
 		5232F72F18F2403D009EEB77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F72E18F2403D009EEB77 /* ViewController.m */; };
-		5232F73218F2403D009EEB77 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F73118F2403D009EEB77 /* MyScene.m */; };
-		5232F73418F2403D009EEB77 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 5232F73318F2403D009EEB77 /* Spaceship.png */; };
 		5232F73618F2403D009EEB77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5232F73518F2403D009EEB77 /* Images.xcassets */; };
 		5232F73D18F2403D009EEB77 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F73C18F2403D009EEB77 /* XCTest.framework */; };
 		5232F73E18F2403D009EEB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71618F2403D009EEB77 /* Foundation.framework */; };
 		5232F73F18F2403D009EEB77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71A18F2403D009EEB77 /* UIKit.framework */; };
 		5232F74718F2403D009EEB77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5232F74518F2403D009EEB77 /* InfoPlist.strings */; };
 		5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SupersonicTests.m */; };
+		5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75318F387FB009EEB77 /* MainGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +50,14 @@
 		5232F72B18F2403D009EEB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5232F72D18F2403D009EEB77 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5232F72E18F2403D009EEB77 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5232F73018F2403D009EEB77 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		5232F73118F2403D009EEB77 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		5232F73318F2403D009EEB77 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		5232F73518F2403D009EEB77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupersonicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F73C18F2403D009EEB77 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5232F74418F2403D009EEB77 /* SupersonicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SupersonicTests-Info.plist"; sourceTree = "<group>"; };
 		5232F74618F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5232F74818F2403D009EEB77 /* SupersonicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupersonicTests.m; sourceTree = "<group>"; };
+		5232F75218F387FB009EEB77 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
+		5232F75318F387FB009EEB77 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +124,8 @@
 				5232F72A18F2403D009EEB77 /* Main.storyboard */,
 				5232F72D18F2403D009EEB77 /* ViewController.h */,
 				5232F72E18F2403D009EEB77 /* ViewController.m */,
-				5232F73018F2403D009EEB77 /* MyScene.h */,
-				5232F73118F2403D009EEB77 /* MyScene.m */,
-				5232F73318F2403D009EEB77 /* Spaceship.png */,
+				5232F75218F387FB009EEB77 /* MainGameScene.h */,
+				5232F75318F387FB009EEB77 /* MainGameScene.m */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -242,7 +239,6 @@
 			files = (
 				5232F72318F2403D009EEB77 /* InfoPlist.strings in Resources */,
 				5232F73618F2403D009EEB77 /* Images.xcassets in Resources */,
-				5232F73418F2403D009EEB77 /* Spaceship.png in Resources */,
 				5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,10 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5232F73218F2403D009EEB77 /* MyScene.m in Sources */,
 				5232F72F18F2403D009EEB77 /* ViewController.m in Sources */,
 				5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */,
 				5232F72518F2403D009EEB77 /* main.m in Sources */,
+				5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +468,7 @@
 				5232F74E18F2403D009EEB77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SupersonicTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +477,7 @@
 				5232F75118F2403D009EEB77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
