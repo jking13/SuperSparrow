@@ -5,6 +5,7 @@
 //  Created by John King on 4/7/14.
 //  Copyright (c) 2014 John King. All rights reserved.
 //  testing conflict resolution 5
+//  testing conflict resolution 4
 
 #import "MainGameScene.h"
 
