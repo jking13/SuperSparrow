@@ -4,7 +4,7 @@
 //
 //  Created by John King on 4/7/14.
 //  Copyright (c) 2014 John King. All rights reserved.
-//  testing conflict resolution 3
+//  testing conflict resolution 4
 
 #import "MainGameScene.h"
 
@@ -88,7 +88,7 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
     //run the action
     [countNode runAction:group completion:^{
         [countNode removeFromParent];
-        if (count==1)
+        if (count<=1)
             [self spawnCeilings];
         else
             [self countDown:count-1];
