@@ -26,6 +26,7 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
         [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 50)];
         [self addChild:self.playerNode];
+        [self.playerNode setZPosition:1];
         return self;
     }
     return NULL;
@@ -115,7 +116,7 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
     [ceiling.rightCeiling runAction:moveCeilingToEnd completion:^{
         [ceiling.rightCeiling removeFromParent];
     }];
-    [ceiling.leftCeiling runAction:timer completion:^{
+    [ceiling.rightCeiling runAction:timer completion:^{
         [self spawnCeilings];
     }];
 }
