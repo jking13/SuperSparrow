@@ -88,7 +88,7 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
     //run the action
     [countNode runAction:group completion:^{
         [countNode removeFromParent];
-        if (count==1)
+        if (count<=1)
             [self spawnCeilings];
         else
             [self countDown:count-1];
