@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Ceiling.h"
 
 @interface MainGameScene : SKScene
 @property (nonatomic, strong) SKSpriteNode *playerNode;//player sprite node

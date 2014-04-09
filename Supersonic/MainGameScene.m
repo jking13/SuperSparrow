@@ -12,7 +12,7 @@
 static NSString * const playerFile = @"PlayerPlaceholder.png"; //name of the png for the player sprite
 static BOOL playerSelected = false; //true if the user has clicked on the player sprite
 static BOOL firstTouch=false;//false until the user touches the screen for the first time.
-
+static NSMutableArray *ceilings;//contains all of the active ceilings on the screen
 
 @implementation MainGameScene
 
@@ -70,10 +70,6 @@ static BOOL firstTouch=false;//false until the user touches the screen for the f
 //parameter should be the start of the countdown
 -(void)countDown:(int) count{
     
-    //break out of recursion
-    if(count==0)
-        return;
-    
     //configure and add the countdown label
     SKLabelNode *countNode=[SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
     countNode.text=[NSString stringWithFormat:@"%d",count];
@@ -91,9 +87,37 @@ static BOOL firstTouch=false;//false until the user touches the screen for the f
     //run the action
     [countNode runAction:group completion:^{
         [countNode removeFromParent];
-        [self countDown:count-1];
+        if (count==1)
+            [self spawnCeilings];
+        else
+            [self countDown:count-1];
     }];
     
+}
+
+-(void) spawnCeilings{
+    //create and add ceiling objects
+    Ceiling *ceiling = [Ceiling alloc];
+    [ceiling initWithSize:self.size];
+    [ceilings addObject:ceiling];
+    [self addChild:ceiling.leftCeiling];
+    [self addChild:ceiling.rightCeiling];
+    
+    //create the actions
+    SKAction *timer = [SKAction scaleTo:1 duration:1];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:3];
+    
+    //run the actions and clean up
+    [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
+        [ceilings removeObject:ceiling];
+        [ceiling.leftCeiling removeFromParent];
+    }];
+    [ceiling.rightCeiling runAction:moveCeilingToEnd completion:^{
+        [ceiling.rightCeiling removeFromParent];
+    }];
+    [ceiling.leftCeiling runAction:timer completion:^{
+        [self spawnCeilings];
+    }];
 }
 
 @end

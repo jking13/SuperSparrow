@@ -23,6 +23,7 @@
 		5232F74718F2403D009EEB77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5232F74518F2403D009EEB77 /* InfoPlist.strings */; };
 		5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SupersonicTests.m */; };
 		5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75318F387FB009EEB77 /* MainGameScene.m */; };
+		5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75618F4EAD4009EEB77 /* Ceiling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		5232F74818F2403D009EEB77 /* SupersonicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupersonicTests.m; sourceTree = "<group>"; };
 		5232F75218F387FB009EEB77 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
 		5232F75318F387FB009EEB77 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
+		5232F75518F4EAD4009EEB77 /* Ceiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ceiling.h; sourceTree = "<group>"; };
+		5232F75618F4EAD4009EEB77 /* Ceiling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ceiling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				5232F72E18F2403D009EEB77 /* ViewController.m */,
 				5232F75218F387FB009EEB77 /* MainGameScene.h */,
 				5232F75318F387FB009EEB77 /* MainGameScene.m */,
+				5232F75518F4EAD4009EEB77 /* Ceiling.h */,
+				5232F75618F4EAD4009EEB77 /* Ceiling.m */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -262,6 +267,7 @@
 				5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */,
 				5232F72518F2403D009EEB77 /* main.m in Sources */,
 				5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */,
+				5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
