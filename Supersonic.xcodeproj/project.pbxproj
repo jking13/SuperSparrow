@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		52203CA718F61651001D4575 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CA618F61651001D4575 /* MainMenuScene.m */; };
 		52203CA918F616EF001D4575 /* PlayerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52203CA818F616EF001D4575 /* PlayerData.plist */; };
+		52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CAB18F61823001D4575 /* SpriteSelectScene.m */; };
 		5232F71718F2403D009EEB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71618F2403D009EEB77 /* Foundation.framework */; };
 		5232F71918F2403D009EEB77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71818F2403D009EEB77 /* CoreGraphics.framework */; };
 		5232F71B18F2403D009EEB77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71A18F2403D009EEB77 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 		52203CA518F61651001D4575 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		52203CA618F61651001D4575 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		52203CA818F616EF001D4575 /* PlayerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerData.plist; sourceTree = "<group>"; };
+		52203CAA18F61823001D4575 /* SpriteSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSelectScene.h; sourceTree = "<group>"; };
+		52203CAB18F61823001D4575 /* SpriteSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteSelectScene.m; sourceTree = "<group>"; };
 		5232F71318F2403D009EEB77 /* Supersonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supersonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F71618F2403D009EEB77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5232F71818F2403D009EEB77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,8 @@
 				5232F75618F4EAD4009EEB77 /* Ceiling.m */,
 				52203CA518F61651001D4575 /* MainMenuScene.h */,
 				52203CA618F61651001D4575 /* MainMenuScene.m */,
+				52203CAA18F61823001D4575 /* SpriteSelectScene.h */,
+				52203CAB18F61823001D4575 /* SpriteSelectScene.m */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -275,6 +280,7 @@
 				5232F72F18F2403D009EEB77 /* ViewController.m in Sources */,
 				5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */,
 				5232F72518F2403D009EEB77 /* main.m in Sources */,
+				52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */,
 				5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */,
 				52203CA718F61651001D4575 /* MainMenuScene.m in Sources */,
 				5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */,
