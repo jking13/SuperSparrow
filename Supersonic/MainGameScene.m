@@ -20,7 +20,8 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
         //bring in data
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
-        NSString *playerFile = [self.playerData objectForKey:@"playerFile"];
+        NSString *spriteType = [self.playerData objectForKey:@"SelectedSprite"];
+        NSString *playerFile = [self.playerData objectForKey:spriteType];
         self.highScore = [self.playerData objectForKey:@"HighScore"];
         self.safeSize = [self.playerData objectForKey:@"Safezone"];
         

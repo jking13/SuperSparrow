@@ -2,11 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>RedSprite</key>
+	<string>PlayerPlaceholderRed.png</string>
+	<key>PurpleSprite</key>
+	<string>PlayerPlaceholderPurple.png</string>
+	<key>GreenSprite</key>
+	<string>PlayerPlaceholderGreen.png</string>
+	<key>BlueSprite</key>
+	<string>PlayerPlaceholderBlue.png</string>
+	<key>YellowSprite</key>
+	<string>PlayerPlaceholderYellow.png</string>
+	<key>BlackSprite</key>
+	<string>PlayerPlaceholder.png</string>
+	<key>SelectedSprite</key>
+	<string>BlackSprite</string>
 	<key>HighScore</key>
 	<integer>0</integer>
 	<key>Safezone</key>
 	<real>80</real>
-	<key>playerFile</key>
-	<string>PlayerPlaceholder.png</string>
 </dict>
 </plist>
