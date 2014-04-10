@@ -33,6 +33,27 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
         [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 50)];
         [self addChild:self.playerNode];
         [self.playerNode setZPosition:1];
+        
+        //initialize score label and add to scene
+        self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"American-Typewriter-Bold"];
+        int scoreCount = 0;
+        self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
+        self.scoreNode.fontColor = [UIColor blackColor];
+        [self.scoreNode setPosition:CGPointMake(self.size.width - 10, self.size.height - (self.size.height-10))];
+        [self addChild:self.scoreNode];
+        
+        //configure super-distracting score pulsation
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.5];
+        SKAction *fadeIn = [SKAction fadeInWithDuration:0.5];
+        SKAction *enlargeScore = [SKAction scaleTo:1.25 duration:0.25];
+        SKAction *shrinkScore = [SKAction scaleTo:0.75 duration:0.5];
+        SKAction *scorePulser = [SKAction sequence:@[enlargeScore,shrinkScore]];
+        SKAction *scoreFader = [SKAction sequence:@[fadeOut, fadeIn]];
+        SKAction *pulseForever = [SKAction repeatActionForever:scorePulser];
+        SKAction *fadeForever = [SKAction repeatActionForever:scoreFader];
+        [self.scoreNode runAction:pulseForever];
+        [self.scoreNode runAction:fadeForever];
+
         return self;
     }
     return NULL;

@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSMutableDictionary *playerData;//saved player info
 @property (strong, nonatomic) NSNumber *highScore;
 @property (strong, nonatomic) NSNumber *safeSize;
+@property (strong, nonatomic) SKLabelNode *scoreNode; //score label node
 @end
