@@ -11,6 +11,7 @@
 static BOOL playerSelected = false; //true if the user has clicked on the player sprite
 static BOOL firstTouch=false;//false until the user touches the screen for the first time.
 static NSMutableArray *ceilings;//contains all of the active ceilings on the screen
+static int scoreCount = 0;
 
 @implementation MainGameScene
 
@@ -35,18 +36,17 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
         [self.playerNode setZPosition:1];
         
         //initialize score label and add to scene
-        self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"American-Typewriter-Bold"];
-        int scoreCount = 0;
+        self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
         self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
         self.scoreNode.fontColor = [UIColor blackColor];
-        [self.scoreNode setPosition:CGPointMake(self.size.width - 10, self.size.height - (self.size.height-10))];
+        [self.scoreNode setPosition:CGPointMake(self.size.width - 40, self.size.height - (self.size.height-10))];
         [self addChild:self.scoreNode];
         
         //configure super-distracting score pulsation
         SKAction *fadeOut = [SKAction fadeOutWithDuration:0.5];
         SKAction *fadeIn = [SKAction fadeInWithDuration:0.5];
-        SKAction *enlargeScore = [SKAction scaleTo:1.25 duration:0.25];
-        SKAction *shrinkScore = [SKAction scaleTo:0.75 duration:0.5];
+        SKAction *enlargeScore = [SKAction scaleTo:1.15 duration:0.25];
+        SKAction *shrinkScore = [SKAction scaleTo:0.85 duration:0.5];
         SKAction *scorePulser = [SKAction sequence:@[enlargeScore,shrinkScore]];
         SKAction *scoreFader = [SKAction sequence:@[fadeOut, fadeIn]];
         SKAction *pulseForever = [SKAction repeatActionForever:scorePulser];
@@ -123,6 +123,8 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
     
 }
 
+
+
 -(void) spawnCeilings{
     //create and add ceiling objects
     Ceiling *ceiling = [Ceiling alloc];
@@ -140,12 +142,17 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
         [ceilings removeObject:ceiling];
         [ceiling.leftCeiling removeFromParent];
     }];
+    
     [ceiling.rightCeiling runAction:moveCeilingToEnd completion:^{
         [ceiling.rightCeiling removeFromParent];
     }];
     [ceiling.rightCeiling runAction:timer completion:^{
+  
         [self spawnCeilings];
     }];
 }
 
+-(void)update:(NSTimeInterval)currentTime
+{
+}
 @end
