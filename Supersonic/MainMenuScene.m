@@ -49,7 +49,7 @@
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKNode *node in nodes) {
-        //presents the level selection scene
+        //presents the game scene
         if ([node.name isEqualToString:@"playButton"]) {
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
@@ -57,7 +57,7 @@
             [skView presentScene:scene];
         }
         
-        //presents the upgrade selection scene
+        //presents the sprite selection scene
         if ([node.name isEqualToString:@"spriteSelectButton"]) {
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [SpriteSelectScene sceneWithSize:skView.bounds.size];

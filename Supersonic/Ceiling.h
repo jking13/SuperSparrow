@@ -13,5 +13,7 @@
 @property (nonatomic,strong) SKSpriteNode *leftCeiling;//left portion of the ceiling
 @property (nonatomic,strong) SKSpriteNode *rightCeiling;//right portion of the ceiling
 
--(void)initWithSize:(CGSize) size;//create the ceiling nodes, size should be the screen size
+-(void)initWithSize:(CGSize) size SafeWidth:(float) safeSize;//create the ceiling nodes, size should be the screen
+                                                             //size, safeSize is the width of the safe area for the
+                                                             //ceiling
 @end

@@ -11,4 +11,7 @@
 
 @interface MainGameScene : SKScene
 @property (nonatomic, strong) SKSpriteNode *playerNode;//player sprite node
+@property (strong, nonatomic) NSMutableDictionary *playerData;//saved player info
+@property (strong, nonatomic) NSNumber *highScore;
+@property (strong, nonatomic) NSNumber *safeSize;
 @end

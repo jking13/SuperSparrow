@@ -9,5 +9,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface SpriteSelectScene : SKScene
-
+@property (strong, nonatomic) NSMutableDictionary *playerData;//saved player info
 @end

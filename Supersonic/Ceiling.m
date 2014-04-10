@@ -7,13 +7,12 @@
 //
 
 #import "Ceiling.h"
-static const float SAFESIZE = 80.0;//size of the safe are for the player in the ceiling
 @implementation Ceiling
 //size should be the screen size
--(void)initWithSize:(CGSize) size
+-(void)initWithSize:(CGSize) size SafeWidth:(float) safeSize
 {
     //generate random safe spot
-    int lowerBound = SAFESIZE/2;
+    int lowerBound = safeSize/2;
     int upperBound = size.width-lowerBound;
     float rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
     

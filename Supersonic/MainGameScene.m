@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 John King. All rights reserved.
 
 #import "MainGameScene.h"
+#import "AppDelegate.h"
 
-
-static NSString * const playerFile = @"PlayerPlaceholder.png"; //name of the png for the player sprite
 static BOOL playerSelected = false; //true if the user has clicked on the player sprite
 static BOOL firstTouch=false;//false until the user touches the screen for the first time.
 static NSMutableArray *ceilings;//contains all of the active ceilings on the screen
@@ -17,6 +16,13 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        //bring in data
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.playerData = appDelegate.playerData;
+        NSString *playerFile = [self.playerData objectForKey:@"playerFile"];
+        self.highScore = [self.playerData objectForKey:@"HighScore"];
+        self.safeSize = [self.playerData objectForKey:@"Safezone"];
         
         //set background color
         self.backgroundColor=[SKColor whiteColor];
@@ -98,14 +104,14 @@ static NSMutableArray *ceilings;//contains all of the active ceilings on the scr
 -(void) spawnCeilings{
     //create and add ceiling objects
     Ceiling *ceiling = [Ceiling alloc];
-    [ceiling initWithSize:self.size];
+    [ceiling initWithSize:self.size SafeWidth:[self.safeSize floatValue]];
     [ceilings addObject:ceiling];
     [self addChild:ceiling.leftCeiling];
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:1];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:3];
+    SKAction *timer = [SKAction scaleTo:1 duration:0.5];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:1.5];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
