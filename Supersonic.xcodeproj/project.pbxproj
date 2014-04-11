@@ -10,6 +10,7 @@
 		52203CA718F61651001D4575 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CA618F61651001D4575 /* MainMenuScene.m */; };
 		52203CA918F616EF001D4575 /* PlayerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52203CA818F616EF001D4575 /* PlayerData.plist */; };
 		52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CAB18F61823001D4575 /* SpriteSelectScene.m */; };
+		52203CAF18F77AF0001D4575 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CAE18F77AF0001D4575 /* GameOverScene.m */; };
 		5232F71718F2403D009EEB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71618F2403D009EEB77 /* Foundation.framework */; };
 		5232F71918F2403D009EEB77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71818F2403D009EEB77 /* CoreGraphics.framework */; };
 		5232F71B18F2403D009EEB77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71A18F2403D009EEB77 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 		52203CA818F616EF001D4575 /* PlayerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerData.plist; sourceTree = "<group>"; };
 		52203CAA18F61823001D4575 /* SpriteSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSelectScene.h; sourceTree = "<group>"; };
 		52203CAB18F61823001D4575 /* SpriteSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteSelectScene.m; sourceTree = "<group>"; };
+		52203CAD18F77AF0001D4575 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		52203CAE18F77AF0001D4575 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		5232F71318F2403D009EEB77 /* Supersonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supersonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F71618F2403D009EEB77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5232F71818F2403D009EEB77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 				52203CA618F61651001D4575 /* MainMenuScene.m */,
 				52203CAA18F61823001D4575 /* SpriteSelectScene.h */,
 				52203CAB18F61823001D4575 /* SpriteSelectScene.m */,
+				52203CAD18F77AF0001D4575 /* GameOverScene.h */,
+				52203CAE18F77AF0001D4575 /* GameOverScene.m */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -283,6 +288,7 @@
 				52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */,
 				5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */,
 				52203CA718F61651001D4575 /* MainMenuScene.m in Sources */,
+				52203CAF18F77AF0001D4575 /* GameOverScene.m in Sources */,
 				5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
