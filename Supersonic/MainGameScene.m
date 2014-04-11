@@ -7,16 +7,25 @@
 
 #import "MainGameScene.h"
 #import "AppDelegate.h"
+#import "GameOverScene.h"
 
-static BOOL playerSelected = false; //true if the user has clicked on the player sprite
-static BOOL firstTouch=false;//false until the user touches the screen for the first time.
-static NSMutableArray *ceilings;//contains all of the active ceilings on the screen
-static int scoreCount = 0;
+BOOL playerSelected; //true if the user has clicked on the player sprite
+BOOL firstTouch;//false until the user touches the screen for the first time.
+NSMutableArray *ceilings;//contains all of the active ceilings on the screen
+NSMutableArray *scorableCeilings;//ceilings that are possible to add to the score
+int scoreCount;
 
 @implementation MainGameScene
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        //initialize variables;
+        ceilings = [[NSMutableArray alloc] init];
+        scorableCeilings = [[NSMutableArray alloc] init];
+        playerSelected = false;
+        firstTouch = false;
+        scoreCount = 0;
         
         //bring in data
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -130,12 +139,13 @@ static int scoreCount = 0;
     Ceiling *ceiling = [Ceiling alloc];
     [ceiling initWithSize:self.size SafeWidth:[self.safeSize floatValue]];
     [ceilings addObject:ceiling];
+    [scorableCeilings addObject:ceiling];
     [self addChild:ceiling.leftCeiling];
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:0.5];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:1.5];
+    SKAction *timer = [SKAction scaleTo:1 duration:1];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:2];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
@@ -154,5 +164,45 @@ static int scoreCount = 0;
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    NSMutableArray *ceilingsToRemove = [[NSMutableArray alloc] init];
+    
+    //collision detection
+    CGRect frame = self.playerNode.frame;
+    if ( (frame.origin.x <= 0) || (frame.origin.y <= 0)
+        || (frame.origin.x+frame.size.width >= self.size.width)
+        || (frame.origin.y+frame.size.height >= self.size.height)) {
+        [self gameOver];
+    }
+    for(Ceiling *ceiling in ceilings)
+    {
+        if (CGRectIntersectsRect(ceiling.leftCeiling.frame, self.playerNode.frame)
+            || CGRectIntersectsRect(ceiling.rightCeiling.frame, self.playerNode.frame)) {
+            [self gameOver];
+        }
+    }
+    
+    //score detection
+    for(Ceiling *ceiling in scorableCeilings){
+        if (ceiling.leftCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height
+            < frame.origin.y) {
+            [ceilingsToRemove addObject:ceiling];
+            scoreCount++;
+            self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
+            
+        }
+    }
+    
+    //cleanup
+    for(Ceiling *ceiling in ceilingsToRemove){
+        [scorableCeilings removeObject:ceiling];
+    }
+}
+-(void) gameOver
+{
+    SKView * skView = (SKView *)self.view;
+    GameOverScene * scene = [GameOverScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    [scene setScoreAndFinishInit:scoreCount];
+    [skView presentScene:scene];
 }
 @end

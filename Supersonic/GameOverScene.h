@@ -9,5 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface GameOverScene : SKScene
+@property (strong, nonatomic) NSMutableDictionary *playerData;//saved player info
+@property (strong, nonatomic) NSNumber *lastScore;
 
+-(void)setScoreAndFinishInit:(int) score;
 @end
