@@ -50,18 +50,7 @@ int scoreCount;
         self.scoreNode.fontColor = [UIColor blackColor];
         [self.scoreNode setPosition:CGPointMake(self.size.width - 40, self.size.height - (self.size.height-10))];
         [self addChild:self.scoreNode];
-        
-        //configure super-distracting score pulsation
-        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.5];
-        SKAction *fadeIn = [SKAction fadeInWithDuration:0.5];
-        SKAction *enlargeScore = [SKAction scaleTo:1.15 duration:0.25];
-        SKAction *shrinkScore = [SKAction scaleTo:0.85 duration:0.5];
-        SKAction *scorePulser = [SKAction sequence:@[enlargeScore,shrinkScore]];
-        SKAction *scoreFader = [SKAction sequence:@[fadeOut, fadeIn]];
-        SKAction *pulseForever = [SKAction repeatActionForever:scorePulser];
-        SKAction *fadeForever = [SKAction repeatActionForever:scoreFader];
-        [self.scoreNode runAction:pulseForever];
-        [self.scoreNode runAction:fadeForever];
+    
 
         return self;
     }
@@ -181,6 +170,14 @@ int scoreCount;
         }
     }
     
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:0.5];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:0.5];
+    SKAction *enlargeScore = [SKAction scaleTo:1.15 duration:0.25];
+    SKAction *shrinkScore = [SKAction scaleTo:0.85 duration:0.5];
+    SKAction *scorePulser = [SKAction sequence:@[enlargeScore,shrinkScore]];
+    SKAction *scoreFader = [SKAction sequence:@[fadeOut, fadeIn]];
+
+    
     //score detection
     for(Ceiling *ceiling in scorableCeilings){
         if (ceiling.leftCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height
@@ -188,7 +185,8 @@ int scoreCount;
             [ceilingsToRemove addObject:ceiling];
             scoreCount++;
             self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
-            
+            [self.scoreNode runAction:scorePulser];
+            [self.scoreNode runAction:scoreFader];
         }
     }
     
