@@ -79,17 +79,71 @@ int scoreCount;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     //if the player is selected we move the playernode to the new point
-    if(!playerSelected)
-        return;
-	UITouch *touch = [touches anyObject];
-	CGPoint touchLocation = [touch locationInNode:self];
-	self.playerNode.position=touchLocation;
+    //if(!playerSelected)
+    //    return;
+	//UITouch *touch = [touches anyObject];
+	//CGPoint touchLocation = [touch locationInNode:self];
+	//self.playerNode.position=touchLocation;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    //the player is obviously no longer selected
-    playerSelected=false;
+    //calculate if line between current position and touch intersect a ceiling and set player to that intersect if necessary
+    UITouch *touch = [touches anyObject];
+    CGPoint touchLocation = [touch locationInNode:self];
+    
+    CGFloat dx = touchLocation.x - self.playerNode.position.x;
+    CGFloat dy = touchLocation.y - self.playerNode.position.y;
+    NSMutableArray *intersectCeilings = [[NSMutableArray alloc] init];
+    NSMutableArray *orderedCeilings = [[NSMutableArray alloc] init];
+
+    if(dy > 0)
+    {
+        for(Ceiling *ceiling in ceilings)
+        {
+            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) > touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) > touchLocation.y))
+            {
+                [intersectCeilings addObject: ceiling];
+            }
+                
+        }
+        
+    }
+    else if (dy < 0)
+    {
+        for(Ceiling *ceiling in ceilings)
+        {
+            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) < touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) < touchLocation.y))
+            {
+                [intersectCeilings addObject: ceiling];
+            }
+            
+        }
+    }
+    
+    while(intersectCeilings.count != 0)
+    {
+        int max = 0;
+        Ceiling *ceilingMax = [[Ceiling alloc]init];
+        
+        for(int i; i< intersectCeilings.count-1;i++)
+        {
+            Ceiling *tempCeiling = [intersectCeilings objectAtIndex:i];
+            if(tempCeiling.leftCeiling.frame.size.height > max)
+            {
+                max = tempCeiling.leftCeiling.frame.size.height;
+                ceilingMax = tempCeiling;
+            }
+            [intersectCeilings removeObjectAtIndex:i];
+            [orderedCeilings addObject:ceilingMax];
+        }
+        
+    }
+        
+    
+    
+    
+    
 }
 
 //runs the countdown animation and begins the game on completion
