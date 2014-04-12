@@ -236,7 +236,7 @@ int scoreCount;
     
     //create the actions
     SKAction *timer = [SKAction scaleTo:1 duration:1];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:2];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:6];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
@@ -262,12 +262,14 @@ int scoreCount;
     if ( (frame.origin.x <= 0) || (frame.origin.y <= 0)
         || (frame.origin.x+frame.size.width >= self.size.width)
         || (frame.origin.y+frame.size.height >= self.size.height)) {
+        
         [self gameOver];
     }
     for(Ceiling *ceiling in ceilings)
     {
         if (CGRectIntersectsRect(ceiling.leftCeiling.frame, self.playerNode.frame)
             || CGRectIntersectsRect(ceiling.rightCeiling.frame, self.playerNode.frame)) {
+            [NSThread sleepForTimeInterval:1];
             [self gameOver];
         }
     }
