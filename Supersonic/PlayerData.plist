@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Facts</key>
+	<dict>
+		<key>Num</key>
+		<integer>2</integer>
+		<key>1</key>
+		<dict>
+			<key>1</key>
+			<string>1 Test line 1</string>
+			<key>2</key>
+			<string>1 Test line 2</string>
+			<key>3</key>
+			<string>1 Test line 3</string>
+		</dict>
+		<key>2</key>
+		<dict>
+			<key>1</key>
+			<string>2 Test line 1</string>
+			<key>2</key>
+			<string>2 Test line 2</string>
+			<key>3</key>
+			<string>2 Test line 3</string>
+		</dict>
+	</dict>
 	<key>RedSprite</key>
 	<string>PlayerPlaceholderRed.png</string>
 	<key>PurpleSprite</key>
