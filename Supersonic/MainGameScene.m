@@ -140,7 +140,16 @@ int scoreCount;
         
     }
         
-    
+    for(Ceiling *ceiling in orderedCeilings)
+    {
+        if(dy <= 0)
+        {
+            if(dx <= 0)
+            {
+                
+            }
+        }
+    }
     
     
     
