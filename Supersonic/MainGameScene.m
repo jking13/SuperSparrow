@@ -101,44 +101,61 @@ int scoreCount;
     {
         for(Ceiling *ceiling in ceilings)
         {
-            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) > touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) > touchLocation.y))
-            {
+            if(ceiling.leftCeiling.frame.origin.y < touchLocation.y&&ceiling.leftCeiling.frame.origin.y>self.playerNode.position.y)
                 [intersectCeilings addObject: ceiling];
-            }
                 
         }
-        
+        while(intersectCeilings.count > 0)
+        {
+            int min = self.size.height+100;//being cautious
+            Ceiling *ceilingMin;
+            
+            for(Ceiling *ceiling in intersectCeilings)
+            {
+                if(ceiling.leftCeiling.frame.origin.y < min)
+                {
+                    min = ceiling.leftCeiling.frame.origin.y;
+                    ceilingMin = ceiling;
+                }
+            }
+            [intersectCeilings removeObject:ceilingMin];
+            [orderedCeilings addObject:ceilingMin];
+        }
     }
     else if (dy < 0)
     {
         for(Ceiling *ceiling in ceilings)
         {
-            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) < touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) < touchLocation.y))
-            {
+            if(ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height > touchLocation.y&&ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height<self.playerNode.position.y)
                 [intersectCeilings addObject: ceiling];
-            }
             
         }
-    }
-    
-    while(intersectCeilings.count != 0)
-    {
-        int max = 0;
-        Ceiling *ceilingMax = [[Ceiling alloc]init];
-        
-        for(int i; i< intersectCeilings.count-1;i++)
+        while(intersectCeilings.count > 0)
         {
-            Ceiling *tempCeiling = [intersectCeilings objectAtIndex:i];
-            if(tempCeiling.leftCeiling.frame.size.height > max)
+            int max = 0;
+            Ceiling *ceilingMax;
+            
+            for(Ceiling *ceiling in intersectCeilings)
             {
-                max = tempCeiling.leftCeiling.frame.size.height;
-                ceilingMax = tempCeiling;
+                if(ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height > max)
+                {
+                    max = ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height;
+                    ceilingMax = ceiling;
+                }
             }
-            [intersectCeilings removeObjectAtIndex:i];
+            [intersectCeilings removeObject:ceilingMax];
             [orderedCeilings addObject:ceilingMax];
         }
-        
     }
+    for(Ceiling *ceiling in orderedCeilings)
+    {
+        //check top of left ceiling
+        float dy2=ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height-self.playerNode.position.y;
+        float dx2=dy2/dy*dx;
+        if ((dx2+self.playerNode.position.x)>0&&(dx2+self.playerNode.position.x)<=ceiling.leftCeiling.frame.size.width) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            return;
+        }
         
     for(Ceiling *ceiling in orderedCeilings)
     {
