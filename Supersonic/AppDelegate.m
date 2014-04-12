@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 @interface AppDelegate () <ChartboostDelegate>
 @end
-
+#define debugResetData 0
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,7 +23,7 @@
     
     NSMutableDictionary *pdata = [[NSMutableDictionary alloc] initWithContentsOfFile:plistFilePathInDocumentsDirectory];
     //if no saved data load default data
-    if (!pdata) {
+    if (!pdata||debugResetData) {
         NSString *plistFilePathInMainBundle = [[NSBundle mainBundle] pathForResource:@"PlayerData" ofType:@"plist"];
         
         pdata = [[NSMutableDictionary alloc] initWithContentsOfFile:plistFilePathInMainBundle];
