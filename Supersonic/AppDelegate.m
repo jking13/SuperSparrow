@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+@interface AppDelegate () <ChartboostDelegate>
+@end
 
 @implementation AppDelegate
 
@@ -50,14 +52,69 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    Chartboost *cb = [Chartboost sharedChartboost];
+    
+    cb.appId = @"534b32061873da0206baec0c";
+    cb.appSignature = @"67d555ac0a323c2dbd02478edb63aafd627231ba";
+    
+    // Required for use of delegate methods. See "Advanced Topics" section below.
+    cb.delegate = self;
+    
+    // Begin a user session. Must not be dependent on user actions or any prior network requests.
+    // Must be called every time your app becomes active.
+    [cb startSession];
+    
+    // Show an interstitial
+    [cb showInterstitial];
+    
+    // Cache an interstitial at the default location
+    [cb cacheInterstitial];
+    
+    [cb cacheMoreApps];
+}
+
+/*
+ * didDismissInterstitial
+ *
+ * This is called when an interstitial is dismissed
+ *
+ * Is fired on:
+ * - Interstitial click
+ * - Interstitial close
+ *
+ * #Pro Tip: Use the delegate method below to immediately re-cache interstitials
+ */
+
+- (void)didDismissInterstitial:(NSString *)location {
+    NSLog(@"dismissed interstitial at location %@", location);
+    
+    [[Chartboost sharedChartboost] cacheInterstitial:location];
+}
+
+/*
+ * didDismissMoreApps
+ *
+ * This is called when the more apps page is dismissed
+ *
+ * Is fired on:
+ * - More Apps click
+ * - More Apps close
+ *
+ * #Pro Tip: Use the delegate method below to immediately re-cache the more apps page
+ */
+
+- (void)didDismissMoreApps {
+    NSLog(@"dismissed more apps page, re-caching now");
+    
+    [[Chartboost sharedChartboost] cacheMoreApps];
 }
 
 @end

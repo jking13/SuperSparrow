@@ -18,10 +18,6 @@
         //set background color
         self.backgroundColor=[SKColor whiteColor];
     
-        //bring in data
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        self.playerData = appDelegate.playerData;
-    
         //spawns the return to main menu button
         SKSpriteNode *mainMenuButton =[SKSpriteNode spriteNodeWithImageNamed:@"buttonscale.png"];
         mainMenuButton.name = @"mainMenuButton";
@@ -40,6 +36,12 @@
 }
 -(void)setScoreAndFinishInit:(int) score
 {
+    
+    //bring in data
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.playerData = appDelegate.playerData;
+    
+    
     self.lastScore=[NSNumber numberWithInt:score];
     NSNumber *highScore = [self.playerData objectForKey:@"HighScore"];
     if ([self.lastScore intValue]>[highScore intValue]) {
@@ -63,6 +65,9 @@
     highScoreNode.fontColor = [UIColor blackColor];
     [highScoreNode setPosition:CGPointMake(self.size.width/2-50, self.size.height/2-50)];
     [self addChild:highScoreNode];
+    
+    
+    [[Chartboost sharedChartboost] showInterstitial];
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];

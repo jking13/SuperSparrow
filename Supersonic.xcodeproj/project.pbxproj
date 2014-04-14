@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520026E318FB683600FE6850 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E218FB683600FE6850 /* QuartzCore.framework */; };
+		520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E418FB684600FE6850 /* SystemConfiguration.framework */; };
+		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EC18FB704E00FE6850 /* CHANGELOG.md */; };
+		520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026EE18FB704E00FE6850 /* libChartboost.a */; };
+		520026F218FB704E00FE6850 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EF18FB704E00FE6850 /* README.md */; };
 		52203CA718F61651001D4575 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CA618F61651001D4575 /* MainMenuScene.m */; };
 		52203CA918F616EF001D4575 /* PlayerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52203CA818F616EF001D4575 /* PlayerData.plist */; };
 		52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CAB18F61823001D4575 /* SpriteSelectScene.m */; };
@@ -41,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520026E218FB683600FE6850 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		520026E418FB684600FE6850 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		520026E618FB686E00FE6850 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		520026E818FB687E00FE6850 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		520026EC18FB704E00FE6850 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		520026ED18FB704E00FE6850 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
+		520026EE18FB704E00FE6850 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		520026EF18FB704E00FE6850 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		52203CA518F61651001D4575 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		52203CA618F61651001D4575 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		52203CA818F616EF001D4575 /* PlayerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerData.plist; sourceTree = "<group>"; };
@@ -79,9 +94,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */,
+				520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */,
+				520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */,
+				520026E318FB683600FE6850 /* QuartzCore.framework in Frameworks */,
 				5232F71918F2403D009EEB77 /* CoreGraphics.framework in Frameworks */,
 				5232F71B18F2403D009EEB77 /* UIKit.framework in Frameworks */,
 				5232F71D18F2403D009EEB77 /* SpriteKit.framework in Frameworks */,
+				520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */,
 				5232F71718F2403D009EEB77 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520026EB18FB704E00FE6850 /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				520026EC18FB704E00FE6850 /* CHANGELOG.md */,
+				520026ED18FB704E00FE6850 /* Chartboost.h */,
+				520026EE18FB704E00FE6850 /* libChartboost.a */,
+				520026EF18FB704E00FE6850 /* README.md */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
 		5232F70A18F2403D009EEB77 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +152,10 @@
 		5232F71518F2403D009EEB77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				520026E818FB687E00FE6850 /* StoreKit.framework */,
+				520026E618FB686E00FE6850 /* AdSupport.framework */,
+				520026E418FB684600FE6850 /* SystemConfiguration.framework */,
+				520026E218FB683600FE6850 /* QuartzCore.framework */,
 				5232F71618F2403D009EEB77 /* Foundation.framework */,
 				5232F71818F2403D009EEB77 /* CoreGraphics.framework */,
 				5232F71A18F2403D009EEB77 /* UIKit.framework */,
@@ -148,6 +183,7 @@
 				52203CAB18F61823001D4575 /* SpriteSelectScene.m */,
 				52203CAD18F77AF0001D4575 /* GameOverScene.h */,
 				52203CAE18F77AF0001D4575 /* GameOverScene.m */,
+				520026EB18FB704E00FE6850 /* Chartboost */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -260,7 +296,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520026F218FB704E00FE6850 /* README.md in Resources */,
 				5232F72318F2403D009EEB77 /* InfoPlist.strings in Resources */,
+				520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */,
 				52203CA918F616EF001D4575 /* PlayerData.plist in Resources */,
 				5232F73618F2403D009EEB77 /* Images.xcassets in Resources */,
 				5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */,
@@ -417,6 +455,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
 				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
+					"$(PROJECT_DIR)/Supersonic/Chartboost",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -431,6 +474,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
 				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
+					"$(PROJECT_DIR)/Supersonic/Chartboost",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Chartboost.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableDictionary *playerData;
+@property (strong, nonatomic) Chartboost *cb;
 @end

@@ -19,6 +19,6 @@
 	<key>HighScore</key>
 	<integer>0</integer>
 	<key>Safezone</key>
-	<real>80</real>
+	<integer>80</integer>
 </dict>
 </plist>

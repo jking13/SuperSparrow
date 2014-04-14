@@ -7,8 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Chartboost.h"
 
-@interface GameOverScene : SKScene
+@interface GameOverScene : SKScene <ChartboostDelegate>
 @property (strong, nonatomic) NSMutableDictionary *playerData;//saved player info
 @property (strong, nonatomic) NSNumber *lastScore;
 
