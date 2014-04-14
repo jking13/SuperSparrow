@@ -72,9 +72,6 @@
     // Must be called every time your app becomes active.
     [cb startSession];
     
-    // Show an interstitial
-    [cb showInterstitial];
-    
     // Cache an interstitial at the default location
     [cb cacheInterstitial];
     
