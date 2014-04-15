@@ -159,7 +159,8 @@ int scoreCount;
         
         //check top of right ceiling
         if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
-            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height)];
+            
             return;
         }
         
@@ -168,11 +169,13 @@ int scoreCount;
         dx2=dy2/dy*dx;
         if ((dx2+self.playerNode.position.x)>0&&(dx2+self.playerNode.position.x)<=ceiling.leftCeiling.frame.size.width) {
             [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            
             return;
         }
         //check bottom of right ceiling
         if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
-            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height)];
+            
             return;
         }
         //check right of left ceiling
@@ -235,7 +238,7 @@ int scoreCount;
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:1];
+    SKAction *timer = [SKAction scaleTo:1 duration:3];
     SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:6];
     
     //run the actions and clean up
@@ -269,7 +272,6 @@ int scoreCount;
     {
         if (CGRectIntersectsRect(ceiling.leftCeiling.frame, self.playerNode.frame)
             || CGRectIntersectsRect(ceiling.rightCeiling.frame, self.playerNode.frame)) {
-            [NSThread sleepForTimeInterval:1];
             [self gameOver];
         }
     }
