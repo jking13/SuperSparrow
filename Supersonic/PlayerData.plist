@@ -24,6 +24,15 @@
 			<key>3</key>
 			<string>2 Test line 3</string>
 		</dict>
+		<key>3</key>
+		<dict>
+			<key>1</key>
+			<string>3 Test line 1</string>
+			<key>2</key>
+			<string>3 Test line 2</string>
+			<key>3</key>
+			<string>3 Test line 3</string>
+		</dict>
 	</dict>
 	<key>RedSprite</key>
 	<string>PlayerPlaceholderRed.png</string>
