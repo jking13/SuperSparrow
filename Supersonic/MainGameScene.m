@@ -120,7 +120,6 @@ int scoreCount;
             }
             [intersectCeilings removeObject:ceilingMin];
             [orderedCeilings addObject:ceilingMin];
-            
         }
     }
     else if (dy < 0)
@@ -146,9 +145,53 @@ int scoreCount;
             }
             [intersectCeilings removeObject:ceilingMax];
             [orderedCeilings addObject:ceilingMax];
-            
         }
     }
+    for(Ceiling *ceiling in orderedCeilings)
+    {
+        //check top of left ceiling
+        float dy2=ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height-self.playerNode.position.y;
+        float dx2=dy2/dy*dx;
+        if ((dx2+self.playerNode.position.x)>0&&(dx2+self.playerNode.position.x)<=ceiling.leftCeiling.frame.size.width) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            return;
+        }
+        
+        //check top of right ceiling
+        if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            return;
+        }
+        
+        //check bottom of left ceiling
+        dy2=ceiling.leftCeiling.frame.origin.y-self.playerNode.position.y;
+        dx2=dy2/dy*dx;
+        if ((dx2+self.playerNode.position.x)>0&&(dx2+self.playerNode.position.x)<=ceiling.leftCeiling.frame.size.width) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            return;
+        }
+        //check bottom of right ceiling
+        if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            return;
+        }
+        //check right of left ceiling
+        dx2=ceiling.leftCeiling.frame.origin.x+ceiling.leftCeiling.frame.size.width-self.playerNode.position.x;
+        dy2=dx2/dx*dy2;
+        if (dy2+self.playerNode.position.y>=ceiling.leftCeiling.frame.origin.y&&dy2+self.playerNode.position.y<=ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, dy2+self.playerNode.position.y)];
+            return;
+        }
+        //check left of right ceiling
+        dx2=ceiling.rightCeiling.frame.origin.x-self.playerNode.position.x;
+        dy2=dx2/dx*dy2;
+        if (dy2+self.playerNode.position.y>=ceiling.rightCeiling.frame.origin.y&&dy2+self.playerNode.position.y<=ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) {
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, dy2+self.playerNode.position.y)];
+            return;
+        }
+    }
+    
+    [self.playerNode setPosition:touchLocation];
 }
 
 //runs the countdown animation and begins the game on completion
