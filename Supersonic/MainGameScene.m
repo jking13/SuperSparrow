@@ -238,8 +238,8 @@ int scoreCount;
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:3];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:6];
+    SKAction *timer = [SKAction scaleTo:1 duration:1];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:2];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
