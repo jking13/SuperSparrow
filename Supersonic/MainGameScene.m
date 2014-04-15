@@ -101,49 +101,54 @@ int scoreCount;
     {
         for(Ceiling *ceiling in ceilings)
         {
-            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) > touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) > touchLocation.y))
-            {
+            if(ceiling.leftCeiling.frame.origin.y < touchLocation.y&&ceiling.leftCeiling.frame.origin.y>self.playerNode.position.y)
                 [intersectCeilings addObject: ceiling];
-            }
                 
         }
-        
+        while(intersectCeilings.count > 0)
+        {
+            int min = self.size.height+100;//being cautious
+            Ceiling *ceilingMin;
+            
+            for(Ceiling *ceiling in intersectCeilings)
+            {
+                if(ceiling.leftCeiling.frame.origin.y < min)
+                {
+                    min = ceiling.leftCeiling.frame.origin.y;
+                    ceilingMin = ceiling;
+                }
+            }
+            [intersectCeilings removeObject:ceilingMin];
+            [orderedCeilings addObject:ceilingMin];
+            
+        }
     }
     else if (dy < 0)
     {
         for(Ceiling *ceiling in ceilings)
         {
-            if(!((ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height) < touchLocation.y || (ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height) < touchLocation.y))
-            {
+            if(ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height > touchLocation.y&&ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height<self.playerNode.position.y)
                 [intersectCeilings addObject: ceiling];
+            
+        }
+        while(intersectCeilings.count > 0)
+        {
+            int max = 0;
+            Ceiling *ceilingMax;
+            
+            for(Ceiling *ceiling in intersectCeilings)
+            {
+                if(ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height > max)
+                {
+                    max = ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height;
+                    ceilingMax = ceiling;
+                }
             }
+            [intersectCeilings removeObject:ceilingMax];
+            [orderedCeilings addObject:ceilingMax];
             
         }
     }
-    
-    while(intersectCeilings.count != 0)
-    {
-        int max = 0;
-        Ceiling *ceilingMax = [[Ceiling alloc]init];
-        
-        for(int i; i< intersectCeilings.count-1;i++)
-        {
-            Ceiling *tempCeiling = [intersectCeilings objectAtIndex:i];
-            if(tempCeiling.leftCeiling.frame.size.height > max)
-            {
-                max = tempCeiling.leftCeiling.frame.size.height;
-                ceilingMax = tempCeiling;
-            }
-            [intersectCeilings removeObjectAtIndex:i];
-            [orderedCeilings addObject:ceilingMax];
-        }
-        
-    }
-        
-    
-    
-    
-    
 }
 
 //runs the countdown animation and begins the game on completion
