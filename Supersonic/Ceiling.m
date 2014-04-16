@@ -17,8 +17,10 @@
     float rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
     
     //create the correct ceilings
-    self.leftCeiling = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(rndValue-lowerBound, 10.0)];
-    self.rightCeiling = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(size.width, 10.0)];
+    self.leftCeiling = [SKSpriteNode spriteNodeWithImageNamed:@"lightning.png"] ;
+    self.leftCeiling.size = CGSizeMake(rndValue-lowerBound, 10.0);
+    self.rightCeiling = [SKSpriteNode spriteNodeWithImageNamed:@"lightning.png" ];
+    self.rightCeiling.size = CGSizeMake(size.width, 10.0);
     self.leftCeiling.position=CGPointMake(self.leftCeiling.size.width/2, size.height);
     self.rightCeiling.position=CGPointMake(rndValue+lowerBound+self.rightCeiling.size.width/2, size.height);
 }

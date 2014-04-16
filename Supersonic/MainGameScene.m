@@ -35,8 +35,12 @@ int scoreCount;
         self.highScore = [self.playerData objectForKey:@"HighScore"];
         self.safeSize = [self.playerData objectForKey:@"Safezone"];
         
-        //set background color
-        self.backgroundColor=[SKColor whiteColor];
+        //set background
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg"];
+        background.xScale = 0.5;
+        background.yScale = 0.5;
+        [self addChild:background];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
         //initialize player sprite and add it to the scene
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
