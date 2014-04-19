@@ -47,7 +47,7 @@
 	<key>YellowSprite</key>
 	<string>PlayerPlaceholderYellow.png</string>
 	<key>BlackSprite</key>
-	<string>supersparrow.png</string>
+	<string>supersparrowtop.png</string>
 	<key>SelectedSprite</key>
 	<string>BlackSprite</string>
 	<key>HighScore</key>
