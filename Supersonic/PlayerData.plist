@@ -45,12 +45,12 @@
 	<key>YellowSprite</key>
 	<string>PlayerPlaceholderYellow.png</string>
 	<key>BlackSprite</key>
-	<string>PlayerPlaceholder.png</string>
+	<string>supersparrow.png</string>
 	<key>SelectedSprite</key>
 	<string>BlackSprite</string>
 	<key>HighScore</key>
 	<integer>0</integer>
 	<key>Safezone</key>
-	<integer>80</integer>
+	<integer>60</integer>
 </dict>
 </plist>

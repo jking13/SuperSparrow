@@ -40,7 +40,7 @@ int scoreCount;
         
         //initialize player sprite and add it to the scene
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
-        [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 50)];
+        [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 100)];
         [self addChild:self.playerNode];
         [self.playerNode setZPosition:1];
         
@@ -92,7 +92,7 @@ int scoreCount;
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInNode:self];
     
-    CGFloat dx = touchLocation.x - self.playerNode.position.x;
+    /*CGFloat dx = touchLocation.x - self.playerNode.position.x;
     CGFloat dy = touchLocation.y - self.playerNode.position.y;
     NSMutableArray *intersectCeilings = [[NSMutableArray alloc] init];
     NSMutableArray *orderedCeilings = [[NSMutableArray alloc] init];
@@ -189,9 +189,9 @@ int scoreCount;
             [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, dy2+self.playerNode.position.y)];
             return;
         }
-    }
+    }*/
     
-    [self.playerNode setPosition:touchLocation];
+    [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
 }
 
 //runs the countdown animation and begins the game on completion
@@ -235,8 +235,8 @@ int scoreCount;
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:1];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:2];
+    SKAction *timer = [SKAction scaleTo:1 duration:.35];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:1];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
@@ -259,11 +259,11 @@ int scoreCount;
     
     //collision detection
     CGRect frame = self.playerNode.frame;
-    if ( (frame.origin.x <= 0) || (frame.origin.y <= 0)
+    /*if ( (frame.origin.x <= 0) || (frame.origin.y <= 0)
         || (frame.origin.x+frame.size.width >= self.size.width)
         || (frame.origin.y+frame.size.height >= self.size.height)) {
         [self gameOver];
-    }
+    }*/
     for(Ceiling *ceiling in ceilings)
     {
         if (CGRectIntersectsRect(ceiling.leftCeiling.frame, self.playerNode.frame)
