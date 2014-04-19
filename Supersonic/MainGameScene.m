@@ -159,7 +159,8 @@ int scoreCount;
         
         //check top of right ceiling
         if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
-            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height)];
+            
             return;
         }
         
@@ -168,11 +169,13 @@ int scoreCount;
         dx2=dy2/dy*dx;
         if ((dx2+self.playerNode.position.x)>0&&(dx2+self.playerNode.position.x)<=ceiling.leftCeiling.frame.size.width) {
             [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            
             return;
         }
         //check bottom of right ceiling
         if ((dx2+self.playerNode.position.x)>=ceiling.rightCeiling.frame.origin.x&&(dx2+self.playerNode.position.x)<self.size.width) {
-            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.leftCeiling.frame.origin.y+ceiling.leftCeiling.frame.size.height)];
+            [self.playerNode setPosition:CGPointMake(dx2+self.playerNode.position.x, ceiling.rightCeiling.frame.origin.y+ceiling.rightCeiling.frame.size.height)];
+            
             return;
         }
         //check right of left ceiling
@@ -262,6 +265,7 @@ int scoreCount;
     /*if ( (frame.origin.x <= 0) || (frame.origin.y <= 0)
         || (frame.origin.x+frame.size.width >= self.size.width)
         || (frame.origin.y+frame.size.height >= self.size.height)) {
+        
         [self gameOver];
     }*/
     for(Ceiling *ceiling in ceilings)
