@@ -33,7 +33,8 @@ static SKShapeNode *selected;
         
         NSString *selectedSpriteType = [self.playerData objectForKey:@"SelectedSprite"];
         NSString *spriteString = @"BlackSprite";
-        NSString *spriteType = [self.playerData objectForKey:spriteString];
+        NSMutableDictionary *spriteDict = [self.playerData objectForKey:spriteString];
+        NSString *spriteType = [spriteDict objectForKey:@"1"];
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         sprite.name=spriteString;
         sprite.zPosition=2;
@@ -42,7 +43,8 @@ static SKShapeNode *selected;
             selectedSprite = sprite;
         }
         spriteString = @"YellowSprite";
-        spriteType = [self.playerData objectForKey:spriteString];
+        spriteDict = [self.playerData objectForKey:spriteString];
+        spriteType = [spriteDict objectForKey:@"1"];
         sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         [sprites addObject:sprite];
         sprite.name=spriteString;
@@ -51,7 +53,8 @@ static SKShapeNode *selected;
             selectedSprite = sprite;
         }
         spriteString = @"BlueSprite";
-        spriteType = [self.playerData objectForKey:spriteString];
+        spriteDict = [self.playerData objectForKey:spriteString];
+        spriteType = [spriteDict objectForKey:@"1"];
         sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         [sprites addObject:sprite];
         sprite.name=spriteString;
@@ -60,7 +63,8 @@ static SKShapeNode *selected;
             selectedSprite = sprite;
         }
         spriteString = @"GreenSprite";
-        spriteType = [self.playerData objectForKey:spriteString];
+        spriteDict = [self.playerData objectForKey:spriteString];
+        spriteType = [spriteDict objectForKey:@"1"];
         sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         [sprites addObject:sprite];
         sprite.name=spriteString;
@@ -69,7 +73,8 @@ static SKShapeNode *selected;
             selectedSprite = sprite;
         }
         spriteString = @"PurpleSprite";
-        spriteType = [self.playerData objectForKey:spriteString];
+        spriteDict = [self.playerData objectForKey:spriteString];
+        spriteType = [spriteDict objectForKey:@"1"];
         sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         [sprites addObject:sprite];
         sprite.name=spriteString;
@@ -78,7 +83,8 @@ static SKShapeNode *selected;
             selectedSprite = sprite;
         }
         spriteString = @"RedSprite";
-        spriteType = [self.playerData objectForKey:spriteString];
+        spriteDict = [self.playerData objectForKey:spriteString];
+        spriteType = [spriteDict objectForKey:@"1"];
         sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
         [sprites addObject:sprite];
         sprite.name=spriteString;

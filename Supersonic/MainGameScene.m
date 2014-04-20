@@ -31,7 +31,8 @@ int scoreCount;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
         NSString *spriteType = [self.playerData objectForKey:@"SelectedSprite"];
-        NSString *playerFile = [self.playerData objectForKey:spriteType];
+         NSMutableDictionary *spriteDict = [self.playerData objectForKey:spriteType];
+        NSString *playerFile = [spriteDict objectForKey:@"1"];
         self.highScore = [self.playerData objectForKey:@"HighScore"];
         self.safeSize = [self.playerData objectForKey:@"Safezone"];
         
@@ -43,7 +44,24 @@ int scoreCount;
         background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
         //initialize player sprite and add it to the scene
+        NSMutableArray *runArray = [[NSMutableArray alloc] init];
+        SKAction *runAnimation;
+        NSString *frameName;
+        int count = 1;
+        frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+        // Running player animation
+        while(frameName!=NULL)
+        {
+            SKTexture * runTexture = [SKTexture textureWithImageNamed:frameName];
+            [runArray addObject:runTexture];
+            count++;
+            frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+        }
+        
+        runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.2 resize:YES restore:NO];
+        
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
+        [self.playerNode runAction:[SKAction repeatActionForever:runAnimation]];
         [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 100)];
         [self addChild:self.playerNode];
         [self.playerNode setZPosition:1];

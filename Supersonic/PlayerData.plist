@@ -37,17 +37,41 @@
 		</dict>
 	</dict>
 	<key>RedSprite</key>
-	<string>PlayerPlaceholderRed.png</string>
+	<dict>
+		<key>1</key>
+		<string>PlayerPlaceholderRed.png</string>
+	</dict>
 	<key>PurpleSprite</key>
-	<string>PlayerPlaceholderPurple.png</string>
+	<dict>
+		<key>1</key>
+		<string>PlayerPlaceholderPurple.png</string>
+	</dict>
 	<key>GreenSprite</key>
-	<string>PlayerPlaceholderGreen.png</string>
+	<dict>
+		<key>1</key>
+		<string>PlayerPlaceholderGreen.png</string>
+	</dict>
 	<key>BlueSprite</key>
-	<string>PlayerPlaceholderBlue.png</string>
+	<dict>
+		<key>1</key>
+		<string>PlayerPlaceholderBlue.png</string>
+	</dict>
 	<key>YellowSprite</key>
-	<string>PlayerPlaceholderYellow.png</string>
+	<dict>
+		<key>1</key>
+		<string>PlayerPlaceholderYellow.png</string>
+	</dict>
 	<key>BlackSprite</key>
-	<string>supersparrowtop.png</string>
+	<dict>
+		<key>1</key>
+		<string>supersparrowtop.png</string>
+		<key>2</key>
+		<string>supersparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>supersparrowtop.png</string>
+		<key>4</key>
+		<string>supersparrowtopwingsup.png</string>
+	</dict>
 	<key>SelectedSprite</key>
 	<string>BlackSprite</string>
 	<key>HighScore</key>
