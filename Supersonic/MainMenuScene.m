@@ -7,18 +7,31 @@
 //
 
 #import "MainMenuScene.h"
+#import "AppDelegate.h"
 
 @implementation MainMenuScene
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
+        //bring in data
+        
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.playerData = appDelegate.playerData;
+        
         //set background color
         self.backgroundColor=[SKColor whiteColor];
         
+        //spawn the title logo
+        NSString *logoString = [self.playerData objectForKey:@"TitleLogo"];
+        SKSpriteNode *logo = [SKSpriteNode spriteNodeWithImageNamed:logoString];
+        [logo setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+100)];
+        [self addChild:logo];
+        
         //spawns the play button
-        SKSpriteNode *playButton =[SKSpriteNode spriteNodeWithImageNamed:@"buttonscale.png"];
+        NSString *buttonScale = [self.playerData objectForKey:@"ButtonScale"];
+        SKSpriteNode *playButton =[SKSpriteNode spriteNodeWithImageNamed:buttonScale];
         playButton.name = @"playButton";
-        playButton.position =CGPointMake(CGRectGetMidX(self.frame)-64, CGRectGetMidY(self.frame));
+        playButton.position =CGPointMake(CGRectGetMidX(self.frame)-64, CGRectGetMidY(self.frame)-50);
         playButton.size = CGSizeMake(80, 32);
         playButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
         [self addChild:playButton];
@@ -29,9 +42,9 @@
         playLabel.position = CGPointMake(playLabel.position.x, playLabel.position.y-5);
         
         //spawns the sprite selection menu button
-        SKSpriteNode *spriteSelectButton =[SKSpriteNode spriteNodeWithImageNamed:@"buttonscale.png"];
+        SKSpriteNode *spriteSelectButton =[SKSpriteNode spriteNodeWithImageNamed:buttonScale];
         spriteSelectButton.name = @"spriteSelectButton";
-        spriteSelectButton.position =CGPointMake(CGRectGetMidX(self.frame)+64, CGRectGetMidY(self.frame));
+        spriteSelectButton.position =CGPointMake(CGRectGetMidX(self.frame)+64, CGRectGetMidY(self.frame)-50);
         spriteSelectButton.size = CGSizeMake(80, 32);
         spriteSelectButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
         [self addChild:spriteSelectButton];

@@ -25,7 +25,8 @@
         self.backgroundColor=[SKColor whiteColor];
     
         //spawns the return to main menu button
-        SKSpriteNode *mainMenuButton =[SKSpriteNode spriteNodeWithImageNamed:@"buttonscale.png"];
+        NSString *buttonScale = [self.playerData objectForKey:@"ButtonScale"];
+        SKSpriteNode *mainMenuButton =[SKSpriteNode spriteNodeWithImageNamed:buttonScale];
         mainMenuButton.name = @"mainMenuButton";
         mainMenuButton.size = CGSizeMake(80, 32);
         mainMenuButton.position =CGPointMake(mainMenuButton.size.width/2+10, size.height-mainMenuButton.size.height/2-10);

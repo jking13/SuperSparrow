@@ -10,5 +10,5 @@
 #import "MainGameScene.h"
 #import "SpriteSelectScene.h"
 @interface MainMenuScene : SKScene
-
+@property (strong, nonatomic) NSMutableDictionary *playerData;
 @end
