@@ -14,6 +14,7 @@ BOOL firstTouch;//false until the user touches the screen for the first time.
 NSMutableArray *ceilings;//contains all of the active ceilings on the screen
 NSMutableArray *scorableCeilings;//ceilings that are possible to add to the score
 int scoreCount;
+SKSpriteNode *lastStreak;
 
 @implementation MainGameScene
 
@@ -73,6 +74,7 @@ int scoreCount;
         [self.scoreNode setPosition:CGPointMake(self.size.width - 40, self.size.height - (self.size.height-10))];
         [self addChild:self.scoreNode];
     
+        lastStreak=NULL;
 
         return self;
     }
@@ -114,8 +116,8 @@ int scoreCount;
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInNode:self];
     
-    /*CGFloat dx = touchLocation.x - self.playerNode.position.x;
-    CGFloat dy = touchLocation.y - self.playerNode.position.y;
+    CGFloat dx = touchLocation.x - self.playerNode.position.x;
+    /*CGFloat dy = touchLocation.y - self.playerNode.position.y;
     NSMutableArray *intersectCeilings = [[NSMutableArray alloc] init];
     NSMutableArray *orderedCeilings = [[NSMutableArray alloc] init];
 
@@ -216,7 +218,29 @@ int scoreCount;
         }
     }*/
     
+    if (lastStreak!=NULL)
+    {
+        [lastStreak removeAllActions];
+        [lastStreak removeFromParent];
+        lastStreak=NULL;
+    }
+    if (dx>-70&&dx<70)
+        return;
+    NSString *streakFile = [self.playerData objectForKey:@"StreakFile"];
+    lastStreak=[SKSpriteNode spriteNodeWithImageNamed:streakFile];
+    //if (dx<0)
+      //  [lastStreak setZRotation:];
+    lastStreak.centerRect = CGRectMake(70.0/139.0, 35.0/61.0, 10.0/139.0, 10.0/61.0);
+    lastStreak.xScale = (touchLocation.x-self.playerNode.position.x)/lastStreak.size.width;
+    lastStreak.position =CGPointMake((touchLocation.x-self.playerNode.position.x)/2+self.playerNode.position.x,self.playerNode.position.y);
+    [self addChild:lastStreak];
+    SKAction *fade = [SKAction fadeOutWithDuration:0.3];
+    [lastStreak runAction:fade completion:^{
+        [lastStreak removeFromParent];
+        lastStreak=NULL;
+    }];
     [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
+    
 }
 
 //runs the countdown animation and begins the game on completion
