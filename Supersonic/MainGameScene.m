@@ -67,6 +67,13 @@ SKSpriteNode *lastStreak;
         [self addChild:self.playerNode];
         [self.playerNode setZPosition:1];
         
+        //initialize "Tap to Move" banner and add to scene
+        moveBanner = [SKSpriteNode spriteNodeWithImageNamed:@"movebanner.png"];
+        [moveBanner setPosition:CGPointMake(self.size.width/2, self.size.height/2)];
+        moveBanner.xScale = 0.5;
+        moveBanner.yScale = 0.5;
+        [self addChild:moveBanner];
+        
         //initialize score label and add to scene
         self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
         self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
@@ -95,6 +102,7 @@ SKSpriteNode *lastStreak;
     if(!firstTouch)
     {
         firstTouch=true;
+        [moveBanner removeFromParent];
         [self countDown:3];
     }
     
@@ -284,8 +292,8 @@ SKSpriteNode *lastStreak;
     [self addChild:ceiling.rightCeiling];
     
     //create the actions
-    SKAction *timer = [SKAction scaleTo:1 duration:.35];
-    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:1];
+    SKAction *timer = [SKAction scaleTo:1 duration:1];
+    SKAction *moveCeilingToEnd = [SKAction moveToY:-10 duration:3];
     
     //run the actions and clean up
     [ceiling.leftCeiling runAction:moveCeilingToEnd completion:^{
