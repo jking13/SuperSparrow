@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Ceiling : NSObject
+@property (strong, nonatomic) NSMutableDictionary *playerData;//player data
 @property (nonatomic,strong) SKSpriteNode *leftCeiling;//left portion of the ceiling
 @property (nonatomic,strong) SKSpriteNode *rightCeiling;//right portion of the ceiling
 

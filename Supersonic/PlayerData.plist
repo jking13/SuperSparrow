@@ -60,6 +60,15 @@
 		<key>1</key>
 		<string>PlayerPlaceholderBlue.png</string>
 	</dict>
+	<key>Ceilings</key>
+	<dict>
+		<key>1</key>
+		<string>lightning.png</string>
+		<key>2</key>
+		<string>lightning2.png</string>
+		<key>3</key>
+		<string>lightning3.png</string>
+	</dict>
 	<key>YellowSprite</key>
 	<dict>
 		<key>1</key>
