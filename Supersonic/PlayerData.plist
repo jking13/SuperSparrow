@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>DeathAnimation</key>
+	<dict>
+		<key>1</key>
+		<string>deathframe1.png</string>
+		<key>2</key>
+		<string>deathframe2.png</string>
+		<key>3</key>
+		<string>deathframe3.png</string>
+	</dict>
 	<key>StreakFile</key>
 	<string>streak.png</string>
 	<key>TitleLogo</key>
