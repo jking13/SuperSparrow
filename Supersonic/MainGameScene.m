@@ -74,6 +74,10 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
         moveBanner.xScale = 0.5;
         moveBanner.yScale = 0.5;
         [self addChild:moveBanner];
+        SKAction *enlarge = [SKAction scaleTo:0.51 duration:0.25];
+        SKAction *shrink = [SKAction scaleTo:0.49 duration:0.5];
+        SKAction *group = [SKAction sequence:@[enlarge, shrink]];
+        [moveBanner runAction:[SKAction repeatActionForever:group]];
         
         //initialize score label and add to scene
         self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];

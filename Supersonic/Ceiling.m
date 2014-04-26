@@ -38,15 +38,15 @@
         frameName = [ceilingDict objectForKey:[NSString stringWithFormat:@"%d",count]];
     }
     
-    runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.05 resize:NO restore:NO];
+    runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.1 resize:NO restore:NO];
     
     //create the correct ceilings
     self.leftCeiling = [SKSpriteNode spriteNodeWithImageNamed:@"lightning.png"] ;
-    self.leftCeiling.size = CGSizeMake(rndValue-lowerBound, 10.0);
+    self.leftCeiling.size = CGSizeMake(size.width, 10.0);
     self.rightCeiling = [SKSpriteNode spriteNodeWithImageNamed:@"lightning.png" ];
     self.rightCeiling.size = CGSizeMake(size.width, 10.0);
-    self.leftCeiling.position=CGPointMake(self.leftCeiling.size.width/2, size.height);
-    self.rightCeiling.position=CGPointMake(rndValue+lowerBound+self.rightCeiling.size.width/2, size.height);
+    self.leftCeiling.position=CGPointMake(rndValue-lowerBound-self.leftCeiling.frame.size.width/2 , size.height);
+    self.rightCeiling.position=CGPointMake(rndValue+lowerBound+self.rightCeiling.frame.size.width /2 , size.height);
     [self.leftCeiling runAction:[SKAction repeatActionForever:runAnimation]];
     [self.rightCeiling runAction:[SKAction repeatActionForever:runAnimation]];
      
