@@ -15,6 +15,7 @@ NSMutableArray *ceilings;//contains all of the active ceilings on the screen
 NSMutableArray *scorableCeilings;//ceilings that are possible to add to the score
 int scoreCount;
 SKSpriteNode *lastStreak;
+SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 
 @implementation MainGameScene
 
@@ -225,7 +226,7 @@ SKSpriteNode *lastStreak;
             return;
         }
     }*/
-    
+    [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
     if (lastStreak!=NULL)
     {
         [lastStreak removeAllActions];
@@ -236,18 +237,17 @@ SKSpriteNode *lastStreak;
         return;
     NSString *streakFile = [self.playerData objectForKey:@"StreakFile"];
     lastStreak=[SKSpriteNode spriteNodeWithImageNamed:streakFile];
-    //if (dx<0)
-      //  [lastStreak setZRotation:];
     lastStreak.centerRect = CGRectMake(70.0/139.0, 35.0/61.0, 10.0/139.0, 10.0/61.0);
-    lastStreak.xScale = (touchLocation.x-self.playerNode.position.x)/lastStreak.size.width;
-    lastStreak.position =CGPointMake((touchLocation.x-self.playerNode.position.x)/2+self.playerNode.position.x,self.playerNode.position.y);
+    lastStreak.xScale = fabsf(dx)/lastStreak.size.width;
+    if (dx<0)
+        lastStreak.zRotation=M_PI;
+    lastStreak.position =CGPointMake(self.playerNode.position.x-dx/2,self.playerNode.position.y);
     [self addChild:lastStreak];
-    SKAction *fade = [SKAction fadeOutWithDuration:0.3];
+    SKAction *fade = [SKAction fadeOutWithDuration:0.1];
     [lastStreak runAction:fade completion:^{
         [lastStreak removeFromParent];
         lastStreak=NULL;
     }];
-    [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
     
 }
 
