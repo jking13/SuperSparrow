@@ -16,11 +16,13 @@ NSMutableArray *scorableCeilings;//ceilings that are possible to add to the scor
 int scoreCount;
 SKSpriteNode *lastStreak;
 SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
+BOOL gameover;
 
 @implementation MainGameScene
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        gameover = false;
         
         //initialize variables;
         ceilings = [[NSMutableArray alloc] init];
@@ -90,6 +92,9 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (gameover) {
+        return;
+    }
     
     //if we touch the player node we set player selected to true
     UITouch *touch = [touches anyObject];
@@ -120,6 +125,9 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (gameover) {
+        return;
+    }
     
     //calculate if line between current position and touch intersect a ceiling and set player to that intersect if necessary
     UITouch *touch = [touches anyObject];
@@ -283,6 +291,9 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 
 
 -(void) spawnCeilings{
+    if (gameover) {
+        return;
+    }
     //create and add ceiling objects
     Ceiling *ceiling = [Ceiling alloc];
     [ceiling initWithSize:self.size SafeWidth:[self.safeSize floatValue]];
@@ -312,6 +323,9 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    if (gameover) {
+        return;
+    }
     NSMutableArray *ceilingsToRemove = [[NSMutableArray alloc] init];
     
     //collision detection
@@ -357,10 +371,39 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 }
 -(void) gameOver
 {
-    SKView * skView = (SKView *)self.view;
-    GameOverScene * scene = [GameOverScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    [scene setScoreAndFinishInit:scoreCount];
-    [skView presentScene:scene];
+    gameover=true;
+    
+    for (Ceiling *ceiling in ceilings)
+    {
+        [ceiling.leftCeiling removeAllActions];
+        [ceiling.rightCeiling removeAllActions];
+    }
+    [self.playerNode removeAllActions];
+    NSMutableDictionary *spriteDict = [self.playerData objectForKey:@"DeathAnimation"];
+    NSMutableArray *runArray = [[NSMutableArray alloc] init];
+    SKAction *runAnimation;
+    NSString *frameName;
+    int count = 1;
+    frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+    // Running player animation
+    while(frameName!=NULL)
+    {
+        SKTexture * runTexture = [SKTexture textureWithImageNamed:frameName];
+        [runArray addObject:runTexture];
+        count++;
+        frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+    }
+    
+    runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.1 resize:YES restore:NO];
+    SKAction *repeatAnimation = [SKAction repeatAction:runAnimation count:3];
+
+
+    [self.playerNode runAction:repeatAnimation completion:^{
+        SKView * skView = (SKView *)self.view;
+        GameOverScene * scene = [GameOverScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        [scene setScoreAndFinishInit:scoreCount];
+        [skView presentScene:scene];
+    }];
 }
 @end
