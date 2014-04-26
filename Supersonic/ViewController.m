@@ -8,12 +8,19 @@
 
 #import "ViewController.h"
 #import "MainMenuScene.h"
+@import AVFoundation;
 
 @implementation ViewController
 
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
+    NSError *error;
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"SuperSparrow" withExtension:@"wav"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
     
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         // iOS 7
@@ -35,7 +42,9 @@
         
         // Present the scene.
         [skView presentScene:scene];
+        
     }
+    
 }
 
 - (BOOL)shouldAutorotate

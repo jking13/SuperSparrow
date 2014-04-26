@@ -240,6 +240,7 @@ NSString *streakFile;
         }
     }*/
     [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
+    [self runAction:[SKAction playSoundFileNamed:@"whoosh.wav" waitForCompletion:NO]];
     if (lastStreak!=NULL)
     {
         [lastStreak removeAllActions];
@@ -389,6 +390,7 @@ NSString *streakFile;
     NSString *frameName;
     int count = 1;
     frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+    [self runAction:[SKAction playSoundFileNamed:@"electricity.wav" waitForCompletion:NO]];
     // Running player animation
     while(frameName!=NULL)
     {
