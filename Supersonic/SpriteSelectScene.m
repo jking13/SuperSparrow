@@ -26,6 +26,13 @@ static SKShapeNode *selected;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
         
+        //set background image
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];
+        background.xScale = 0.5;
+        background.yScale = 0.5;
+        [self addChild:background];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
+        
         //instantiate sprites
         //I know this seems like a stupid way to do this, but it is actually the easiest way to ensure order
         selected = [[SKShapeNode alloc] init];

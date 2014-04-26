@@ -18,8 +18,12 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
         
-        //set background color
-        self.backgroundColor=[SKColor whiteColor];
+        //set background image
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];
+        background.xScale = 0.5;
+        background.yScale = 0.5;
+        [self addChild:background];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
         //spawn the title logo
         NSString *logoString = [self.playerData objectForKey:@"TitleLogo"];
