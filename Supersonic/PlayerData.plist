@@ -11,8 +11,6 @@
 		<key>3</key>
 		<string>deathframe3.png</string>
 	</dict>
-	<key>StreakFile</key>
-	<string>streak.png</string>
 	<key>TitleLogo</key>
 	<string>titlelogo.png</string>
 	<key>ButtonScale</key>
@@ -51,26 +49,6 @@
 			<string>True story.</string>
 		</dict>
 	</dict>
-	<key>RedSprite</key>
-	<dict>
-		<key>1</key>
-		<string>PlayerPlaceholderRed.png</string>
-	</dict>
-	<key>PurpleSprite</key>
-	<dict>
-		<key>1</key>
-		<string>PlayerPlaceholderPurple.png</string>
-	</dict>
-	<key>GreenSprite</key>
-	<dict>
-		<key>1</key>
-		<string>PlayerPlaceholderGreen.png</string>
-	</dict>
-	<key>BlueSprite</key>
-	<dict>
-		<key>1</key>
-		<string>PlayerPlaceholderBlue.png</string>
-	</dict>
 	<key>Ceilings</key>
 	<dict>
 		<key>1</key>
@@ -80,12 +58,7 @@
 		<key>3</key>
 		<string>lightning3.png</string>
 	</dict>
-	<key>YellowSprite</key>
-	<dict>
-		<key>1</key>
-		<string>PlayerPlaceholderYellow.png</string>
-	</dict>
-	<key>BlackSprite</key>
+	<key>SuperSparrow</key>
 	<dict>
 		<key>1</key>
 		<string>supersparrowtop.png</string>
@@ -95,9 +68,76 @@
 		<string>supersparrowtop.png</string>
 		<key>4</key>
 		<string>supersparrowtopwingsup.png</string>
+		<key>5</key>
+		<string>streak.png</string>
+	</dict>
+	<key>GreenSparrow</key>
+	<dict>
+		<key>1</key>
+		<string>greensparrowtop.png</string>
+		<key>2</key>
+		<string>greeensparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>greensparrowtop.png</string>
+		<key>4</key>
+		<string>greensparrowtopwingsup.png</string>
+		<key>5</key>
+		<string>greenstreak.png</string>
+	</dict>
+	<key>PinkSparrow</key>
+	<dict>
+		<key>1</key>
+		<string>pinksparrowtop.png</string>
+		<key>2</key>
+		<string>pinksparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>pinksparrowtop.png</string>
+		<key>4</key>
+		<string>pinksparrowtopwingsup.png</string>
+		<key>5</key>
+		<string>pinkstreak.png</string>
+	</dict>
+	<key>BatSparrow</key>
+	<dict>
+		<key>1</key>
+		<string>batsparrowtop.png</string>
+		<key>2</key>
+		<string>batsparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>batsparrowtop.png</string>
+		<key>4</key>
+		<string>batsparrowtopwingsup.png</string>
+		<key>5</key>
+		<string>blackstreak.png</string>
+	</dict>
+	<key>IronSparrow</key>
+	<dict>
+		<key>1</key>
+		<string>ironsparrowtop.png</string>
+		<key>2</key>
+		<string>ironsparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>ironsparrowtop.png</string>
+		<key>4</key>
+		<string>ironsparrowtopwingsup.png</string>
+		<key>5</key>
+		<string>yellowstreak.png</string>
+	</dict>
+	<key>WolSparrow</key>
+	<dict>
+		<key>1</key>
+		<string>wolsparrowtop.png</string>
+		<key>2</key>
+		<string>wolsparrowtopwingsdown.png</string>
+		<key>3</key>
+		<string>wolsparrowtop.png</string>
+		<key>4</key>
+		<string>wolsparrowtopwingsdown.png</string>
+		<key>5</key>
+		<string>bluestreak.png</string>
 	</dict>
 	<key>SelectedSprite</key>
-	<string>BlackSprite</string>
+	<string>SuperSparrow</string>
 	<key>HighScore</key>
 	<integer>0</integer>
 	<key>Safezone</key>

@@ -17,6 +17,7 @@ int scoreCount;
 SKSpriteNode *lastStreak;
 SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 BOOL gameover;
+NSString *streakFile;
 
 @implementation MainGameScene
 
@@ -54,15 +55,15 @@ BOOL gameover;
         int count = 1;
         frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
         // Running player animation
-        while(frameName!=NULL)
+        while(count<5)
         {
             SKTexture * runTexture = [SKTexture textureWithImageNamed:frameName];
             [runArray addObject:runTexture];
             count++;
             frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
         }
-        
         runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.2 resize:YES restore:NO];
+        streakFile=frameName;
         
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
         [self.playerNode runAction:[SKAction repeatActionForever:runAnimation]];
@@ -247,7 +248,6 @@ BOOL gameover;
     }
     if (dx>-70&&dx<70)
         return;
-    NSString *streakFile = [self.playerData objectForKey:@"StreakFile"];
     lastStreak=[SKSpriteNode spriteNodeWithImageNamed:streakFile];
     lastStreak.centerRect = CGRectMake(70.0/139.0, 35.0/61.0, 10.0/139.0, 10.0/61.0);
     lastStreak.xScale = fabsf(dx)/lastStreak.size.width;
