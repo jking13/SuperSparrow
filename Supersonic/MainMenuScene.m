@@ -9,6 +9,7 @@
 #import "MainMenuScene.h"
 #import "AppDelegate.h"
 
+
 @implementation MainMenuScene
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -63,6 +64,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKNode *node in nodes) {

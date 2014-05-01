@@ -35,6 +35,10 @@
 		5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SupersonicTests.m */; };
 		5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75318F387FB009EEB77 /* MainGameScene.m */; };
 		5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75618F4EAD4009EEB77 /* Ceiling.m */; };
+		83C22A05190B7D81009C0A9C /* electricity.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A02190B7D81009C0A9C /* electricity.wav */; };
+		83C22A07190B7D81009C0A9C /* whoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A04190B7D81009C0A9C /* whoosh.wav */; };
+		83C22A09190B80F3009C0A9C /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A08190B80F3009C0A9C /* select.wav */; };
+		83C22A0B190B8705009C0A9C /* SuperSparrow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A0A190B8705009C0A9C /* SuperSparrow.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,11 @@
 		5232F75318F387FB009EEB77 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
 		5232F75518F4EAD4009EEB77 /* Ceiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ceiling.h; sourceTree = "<group>"; };
 		5232F75618F4EAD4009EEB77 /* Ceiling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ceiling.m; sourceTree = "<group>"; };
+		83C229FF190B7776009C0A9C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		83C22A02190B7D81009C0A9C /* electricity.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electricity.wav; sourceTree = "<group>"; };
+		83C22A04190B7D81009C0A9C /* whoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whoosh.wav; sourceTree = "<group>"; };
+		83C22A08190B80F3009C0A9C /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
+		83C22A0A190B8705009C0A9C /* SuperSparrow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SuperSparrow.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +146,7 @@
 				5232F74218F2403D009EEB77 /* SupersonicTests */,
 				5232F71518F2403D009EEB77 /* Frameworks */,
 				5232F71418F2403D009EEB77 /* Products */,
+				83C22A01190B7D81009C0A9C /* Sounds */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +162,7 @@
 		5232F71518F2403D009EEB77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83C229FF190B7776009C0A9C /* AudioToolbox.framework */,
 				520026E818FB687E00FE6850 /* StoreKit.framework */,
 				520026E618FB686E00FE6850 /* AdSupport.framework */,
 				520026E418FB684600FE6850 /* SystemConfiguration.framework */,
@@ -219,6 +230,17 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		83C22A01190B7D81009C0A9C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				83C22A0A190B8705009C0A9C /* SuperSparrow.wav */,
+				83C22A08190B80F3009C0A9C /* select.wav */,
+				83C22A02190B7D81009C0A9C /* electricity.wav */,
+				83C22A04190B7D81009C0A9C /* whoosh.wav */,
+			);
+			path = Sounds;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -300,10 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				520026F218FB704E00FE6850 /* README.md in Resources */,
+				83C22A0B190B8705009C0A9C /* SuperSparrow.wav in Resources */,
 				5232F72318F2403D009EEB77 /* InfoPlist.strings in Resources */,
 				520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */,
+				83C22A09190B80F3009C0A9C /* select.wav in Resources */,
 				52203CA918F616EF001D4575 /* PlayerData.plist in Resources */,
 				5232F73618F2403D009EEB77 /* Images.xcassets in Resources */,
+				83C22A05190B7D81009C0A9C /* electricity.wav in Resources */,
+				83C22A07190B7D81009C0A9C /* whoosh.wav in Resources */,
 				5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
