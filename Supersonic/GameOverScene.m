@@ -97,7 +97,7 @@ SKNode *selectedButton;
     [self addChild:highScoreNode];
     
     
-    [[Chartboost sharedChartboost] showInterstitial];
+    //[[Chartboost sharedChartboost] showInterstitial];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
