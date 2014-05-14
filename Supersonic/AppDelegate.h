@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Chartboost.h"
+@import AVFoundation;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableDictionary *playerData;
 @property (strong, nonatomic) Chartboost *cb;
+@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
 @end

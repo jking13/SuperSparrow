@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "Ceiling.h"
+@import AVFoundation;
+
 
 @interface MainGameScene : SKScene
 @property (nonatomic, strong) SKSpriteNode *playerNode;//player sprite node
@@ -15,4 +17,5 @@
 @property (strong, nonatomic) NSNumber *highScore;
 @property (strong, nonatomic) NSNumber *safeSize;
 @property (strong, nonatomic) SKLabelNode *scoreNode; //score label node
+@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
 @end

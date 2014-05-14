@@ -35,6 +35,8 @@ NSString *streakFile;
         //bring in data
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
+        self.backgroundMusicPlayer = appDelegate.backgroundMusicPlayer;
+        [self.backgroundMusicPlayer play];
         NSString *spriteType = [self.playerData objectForKey:@"SelectedSprite"];
          NSMutableDictionary *spriteDict = [self.playerData objectForKey:spriteType];
         NSString *playerFile = [spriteDict objectForKey:@"1"];
@@ -377,6 +379,7 @@ NSString *streakFile;
 -(void) gameOver
 {
     gameover=true;
+    [self.backgroundMusicPlayer stop];
     
     for (Ceiling *ceiling in ceilings)
     {

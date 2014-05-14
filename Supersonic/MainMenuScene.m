@@ -14,7 +14,6 @@ SKNode *selectedButton;
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
         //bring in data
         selectedButton=NULL;
         
@@ -93,6 +92,9 @@ SKNode *selectedButton;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (selectedButton==NULL)
         return;
+    SKTransition *transition = [SKTransition fadeWithDuration:1];
+    [transition setPausesOutgoingScene:true];
+    [transition setPausesIncomingScene:true];
     selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
     [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
         //presents the game scene
@@ -100,15 +102,15 @@ SKNode *selectedButton;
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
-            [skView presentScene:scene];
+            [skView presentScene:scene transition:transition];
         }
-        
+    
         //presents the sprite selection scene
         if ([selectedButton.name isEqualToString:@"spriteSelectButton"]) {
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [SpriteSelectScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
-            [skView presentScene:scene];
+            [skView presentScene:scene transition:transition];
         }
 }
 @end

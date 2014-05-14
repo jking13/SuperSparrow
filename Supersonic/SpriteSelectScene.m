@@ -14,11 +14,12 @@ static NSMutableArray *sprites;
 static SKSpriteNode *selectedSprite;
 static NSString *selectedSpriteName;
 static SKShapeNode *selected;
+SKNode *selectedButton;
 
 @implementation SpriteSelectScene
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
+        selectedButton=NULL;
         //set background color
         self.backgroundColor=[SKColor whiteColor];
         
@@ -139,18 +140,50 @@ static SKShapeNode *selected;
     }
     return NULL;
 }
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+    for (SKNode *node in nodes)
+        //presents the game scene
+        if ([node.name isEqualToString:@"mainMenuButton"])
+            selectedButton = node;
+    selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
+    
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (selectedButton==NULL)
+        return;
+    UITouch *touch = [touches anyObject];
+    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+    bool found = false;
+    for (SKNode *node in nodes)
+        //presents the game scene
+        if ([node.name isEqualToString:selectedButton.name])
+            found=true;
+    if (!found)
+    {
+        selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+        selectedButton=NULL;
+    }
+}
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    SKTransition *transition = [SKTransition fadeWithDuration:1];
+    [transition setPausesOutgoingScene:true];
+    [transition setPausesIncomingScene:true];
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKNode *node in nodes){
         
         //present the main menu
         if ([node.name isEqualToString:@"mainMenuButton"]) {
+            if (selectedButton==NULL)
+                return;
+            [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+            selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
-            [skView presentScene:scene];
+            [skView presentScene:scene transition:transition];
             return;
         }
         if (node.zPosition!=2) {
