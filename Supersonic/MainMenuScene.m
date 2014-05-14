@@ -9,12 +9,14 @@
 #import "MainMenuScene.h"
 #import "AppDelegate.h"
 
-
+SKNode *selectedButton;
 @implementation MainMenuScene
+
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
         //bring in data
+        selectedButton=NULL;
         
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
@@ -62,14 +64,39 @@
     }
     return NULL;
 }
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
     UITouch *touch = [touches anyObject];
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
-    for (SKNode *node in nodes) {
+    for (SKNode *node in nodes)
         //presents the game scene
-        if ([node.name isEqualToString:@"playButton"]) {
+        if ([node.name isEqualToString:@"playButton"]||[node.name isEqualToString:@"spriteSelectButton"])
+            selectedButton = node;
+    selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
+    
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (selectedButton==NULL)
+        return;
+    UITouch *touch = [touches anyObject];
+    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+    bool found = false;
+    for (SKNode *node in nodes)
+        //presents the game scene
+        if ([node.name isEqualToString:selectedButton.name])
+            found=true;
+    if (!found)
+    {
+        selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+        selectedButton=NULL;
+    }
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (selectedButton==NULL)
+        return;
+    selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+    [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+        //presents the game scene
+        if ([selectedButton.name isEqualToString:@"playButton"]) {
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
@@ -77,12 +104,11 @@
         }
         
         //presents the sprite selection scene
-        if ([node.name isEqualToString:@"spriteSelectButton"]) {
+        if ([selectedButton.name isEqualToString:@"spriteSelectButton"]) {
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [SpriteSelectScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
             [skView presentScene:scene];
         }
-    }
 }
 @end
