@@ -12,8 +12,8 @@
 
 static NSMutableArray *sprites;
 static SKSpriteNode *selectedSprite;
+SKSpriteNode *lightningBorder;
 static NSString *selectedSpriteName;
-static SKShapeNode *selected;
 SKNode *selectedButton;
 
 @implementation SpriteSelectScene
@@ -31,14 +31,15 @@ SKNode *selectedButton;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];
         background.xScale = 0.5;
         background.yScale = 0.5;
+        [background setZPosition:-2];
         [self addChild:background];
         background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
+        
+        
         //instantiate sprites
         //I know this seems like a stupid way to do this, but it is actually the easiest way to ensure order
-        selected = [[SKShapeNode alloc] init];
         sprites = [[NSMutableArray alloc] init];
-        
         NSString *selectedSpriteType = [self.playerData objectForKey:@"SelectedSprite"];
         NSString *spriteString = @"SuperSparrow";
         NSMutableDictionary *spriteDict = [self.playerData objectForKey:spriteString];
@@ -117,10 +118,6 @@ SKNode *selectedButton;
             }
         }
         
-        //draw the selection box
-        [self drawBoxAroundSelectedSprite];
-        [self addChild:selected];
-        
         //spawns the return to main menu button
         NSString *buttonScale = [self.playerData objectForKey:@"ButtonScale"];
         SKSpriteNode *mainMenuButton =[SKSpriteNode spriteNodeWithImageNamed:buttonScale];
@@ -134,6 +131,30 @@ SKNode *selectedButton;
         mainMenuLabel.text = @"Main Menu";
         mainMenuLabel.fontSize = 10;
         mainMenuLabel.position = CGPointMake(mainMenuLabel.position.x, mainMenuLabel.position.y-5);
+        
+        //draw the lightning border
+        
+        NSMutableDictionary *ceilingDict = [self.playerData objectForKey:@"LightningBorder"];
+        
+        NSMutableArray *runArray = [[NSMutableArray alloc] init];
+        SKAction *runAnimation;
+        NSString *frameName;
+        int count = 1;
+        frameName = [ceilingDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+         lightningBorder = [SKSpriteNode spriteNodeWithImageNamed:frameName];
+        while(frameName!=NULL)
+        {
+            SKTexture * runTexture = [SKTexture textureWithImageNamed:frameName];
+            [runArray addObject:runTexture];
+            count++;
+            frameName = [ceilingDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+        }
+        
+        runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.1 resize:NO restore:NO];
+        [lightningBorder runAction:[SKAction repeatActionForever:runAnimation]];
+        [lightningBorder setZPosition:-1];
+        [self addChild:lightningBorder];
+        [self drawBoxAroundSelectedSprite];
         
         
         return self;
@@ -199,11 +220,6 @@ SKNode *selectedButton;
 
 //draws the selection box
 -(void)drawBoxAroundSelectedSprite{
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, selectedSprite.frame);
-    selected.lineWidth = 1.0;
-    selected.strokeColor = [SKColor blackColor];
-    selected.glowWidth = 0.5;
-    selected.path=path;
+    lightningBorder.position = selectedSprite.position;
 }
 @end

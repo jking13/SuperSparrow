@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LightningBorder</key>
+	<dict>
+		<key>1</key>
+		<string>lightningborder1.png</string>
+		<key>2</key>
+		<string>lightningborder2.png</string>
+		<key>3</key>
+		<string>lightningborder3.png</string>
+	</dict>
 	<key>DeathAnimation</key>
 	<dict>
 		<key>1</key>
