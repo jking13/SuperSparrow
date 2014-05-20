@@ -31,7 +31,7 @@ SKNode *selectedButton;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];
         background.xScale = 0.5;
         background.yScale = 0.5;
-        [background setZPosition:-2];
+        [background setZPosition:-3];
         [self addChild:background];
         background.position = CGPointMake(self.size.width/2, self.size.height/2);
         
@@ -110,6 +110,11 @@ SKNode *selectedButton;
             float x=(size.width*1/4)*column;
             float y=(size.height*1/3)*row;
             node.position=CGPointMake(x, y);
+            SKSpriteNode * backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:[self.playerData objectForKey:@"SpriteBackground"]];
+            [backgroundNode setPosition:node.position];
+            [backgroundNode setZPosition:-2];
+            [backgroundNode setBlendMode:SKBlendModeScreen];
+            [self addChild:backgroundNode];
             [self addChild:node];
             column++;
             if (column==4) {
