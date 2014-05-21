@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LockBackground</key>
+	<string>plain-blue-gradient-lock.png</string>
 	<key>SpriteBackground</key>
 	<string>plain-blue-gradient.png</string>
 	<key>LightningBorder</key>
@@ -81,6 +83,8 @@
 		<string>supersparrowtopwingsup.png</string>
 		<key>5</key>
 		<string>streak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>0</integer>
 	</dict>
 	<key>GreenSparrow</key>
 	<dict>
@@ -94,6 +98,8 @@
 		<string>greensparrowtopwingsup.png</string>
 		<key>5</key>
 		<string>greenstreak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>10</integer>
 	</dict>
 	<key>PinkSparrow</key>
 	<dict>
@@ -107,6 +113,8 @@
 		<string>pinksparrowtopwingsup.png</string>
 		<key>5</key>
 		<string>pinkstreak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>20</integer>
 	</dict>
 	<key>BatSparrow</key>
 	<dict>
@@ -120,6 +128,8 @@
 		<string>batsparrowtopwingsup.png</string>
 		<key>5</key>
 		<string>blackstreak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>30</integer>
 	</dict>
 	<key>IronSparrow</key>
 	<dict>
@@ -133,6 +143,8 @@
 		<string>ironsparrowtopwingsup.png</string>
 		<key>5</key>
 		<string>yellowstreak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>40</integer>
 	</dict>
 	<key>WolSparrow</key>
 	<dict>
@@ -146,6 +158,8 @@
 		<string>wolsparrowtopwingsdown.png</string>
 		<key>5</key>
 		<string>bluestreak.png</string>
+		<key>ScoreRequirement</key>
+		<integer>50</integer>
 	</dict>
 	<key>SelectedSprite</key>
 	<string>SuperSparrow</string>

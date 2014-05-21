@@ -15,6 +15,7 @@ static SKSpriteNode *selectedSprite;
 SKSpriteNode *lightningBorder;
 static NSString *selectedSpriteName;
 SKNode *selectedButton;
+NSNumber *highScore;
 
 @implementation SpriteSelectScene
 - (id)initWithSize:(CGSize)size {
@@ -26,6 +27,7 @@ SKNode *selectedButton;
         //bring in data
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
+        highScore = [self.playerData objectForKey:@"HighScore"];
         
         //set background image
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];
@@ -39,6 +41,9 @@ SKNode *selectedButton;
         
         //instantiate sprites
         //I know this seems like a stupid way to do this, but it is actually the easiest way to ensure order
+        NSNumber *spriteReq;
+        NSString *lockImage = [self.playerData objectForKey:@"LockBackground"];
+        SKLabelNode *factLabel;
         sprites = [[NSMutableArray alloc] init];
         NSString *selectedSpriteType = [self.playerData objectForKey:@"SelectedSprite"];
         NSString *spriteString = @"SuperSparrow";
@@ -53,53 +58,128 @@ SKNode *selectedButton;
         }
         spriteString = @"GreenSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
-        spriteType = [spriteDict objectForKey:@"1"];
-        sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
-        [sprites addObject:sprite];
-        sprite.name=spriteString;
-        sprite.zPosition=2;
-        if ([selectedSpriteType isEqualToString:spriteString]) {
-            selectedSprite = sprite;
+        spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        if ([highScore intValue]>=[spriteReq intValue]) {
+            spriteType = [spriteDict objectForKey:@"1"];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
+            [sprites addObject:sprite];
+            sprite.name=spriteString;
+            sprite.zPosition=2;
+            if ([selectedSpriteType isEqualToString:spriteString]) {
+                selectedSprite = sprite;
+            }
+        }
+        else
+        {
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
+            [sprites addObject:sprite];
+            sprite.name=@"lock";
+            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [factLabel setFontSize:20];
+            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            factLabel.fontColor = [UIColor redColor];
+            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:factLabel];
         }
         spriteString = @"BatSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
-        spriteType = [spriteDict objectForKey:@"1"];
-        sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
-        [sprites addObject:sprite];
-        sprite.name=spriteString;
-        sprite.zPosition=2;
-        if ([selectedSpriteType isEqualToString:spriteString]) {
-            selectedSprite = sprite;
+        spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        if ([highScore intValue]>=[spriteReq intValue]) {
+            spriteType = [spriteDict objectForKey:@"1"];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
+            [sprites addObject:sprite];
+            sprite.name=spriteString;
+            sprite.zPosition=2;
+            if ([selectedSpriteType isEqualToString:spriteString]) {
+                selectedSprite = sprite;
+            }
+        }
+        else
+        {
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
+            [sprites addObject:sprite];
+            sprite.name=@"lock";
+            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [factLabel setFontSize:20];
+            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            factLabel.fontColor = [UIColor redColor];
+            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:factLabel];
         }
         spriteString = @"PinkSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
-        spriteType = [spriteDict objectForKey:@"1"];
-        sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
-        [sprites addObject:sprite];
-        sprite.name=spriteString;
-        sprite.zPosition=2;
-        if ([selectedSpriteType isEqualToString:spriteString]) {
-            selectedSprite = sprite;
+        spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        if ([highScore intValue]>=[spriteReq intValue]) {
+            spriteType = [spriteDict objectForKey:@"1"];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
+            [sprites addObject:sprite];
+            sprite.name=spriteString;
+            sprite.zPosition=2;
+            if ([selectedSpriteType isEqualToString:spriteString]) {
+                selectedSprite = sprite;
+            }
+        }
+        else
+        {
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
+            [sprites addObject:sprite];
+            sprite.name=@"lock";
+            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [factLabel setFontSize:20];
+            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            factLabel.fontColor = [UIColor redColor];
+            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:factLabel];
         }
         spriteString = @"WolSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
-        spriteType = [spriteDict objectForKey:@"1"];
-        sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
-        [sprites addObject:sprite];
-        sprite.name=spriteString;
-        sprite.zPosition=2;
-        if ([selectedSpriteType isEqualToString:spriteString]) {
-            selectedSprite = sprite;
+        spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        if ([highScore intValue]>=[spriteReq intValue]) {
+            spriteType = [spriteDict objectForKey:@"1"];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
+            [sprites addObject:sprite];
+            sprite.name=spriteString;
+            sprite.zPosition=2;
+            if ([selectedSpriteType isEqualToString:spriteString]) {
+                selectedSprite = sprite;
+            }
+        }
+        else
+        {
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
+            [sprites addObject:sprite];
+            sprite.name=@"lock";
+            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [factLabel setFontSize:20];
+            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            factLabel.fontColor = [UIColor redColor];
+            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:factLabel];
         }
         spriteString = @"IronSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
-        spriteType = [spriteDict objectForKey:@"1"];
-        sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
-        [sprites addObject:sprite];
-        sprite.name=spriteString;
-        sprite.zPosition=2;
-        if ([selectedSpriteType isEqualToString:spriteString]) {
-            selectedSprite = sprite;
+        spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        if ([highScore intValue]>=[spriteReq intValue]) {
+            spriteType = [spriteDict objectForKey:@"1"];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
+            [sprites addObject:sprite];
+            sprite.name=spriteString;
+            sprite.zPosition=2;
+            if ([selectedSpriteType isEqualToString:spriteString]) {
+                selectedSprite = sprite;
+            }
+        }
+        else
+        {
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
+            [sprites addObject:sprite];
+            sprite.name=@"lock";
+            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [factLabel setFontSize:20];
+            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            factLabel.fontColor = [UIColor redColor];
+            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:factLabel];
         }
         
         //put the sprites on the screen
@@ -110,17 +190,21 @@ SKNode *selectedButton;
             float x=(size.width*1/4)*column;
             float y=(size.height*1/3)*row;
             node.position=CGPointMake(x, y);
-            SKSpriteNode * backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:[self.playerData objectForKey:@"SpriteBackground"]];
-            [backgroundNode setPosition:node.position];
-            [backgroundNode setZPosition:-2];
-            [backgroundNode setBlendMode:SKBlendModeScreen];
-            [self addChild:backgroundNode];
             [self addChild:node];
             column++;
             if (column==4) {
                 column=1;
                 row=2;
             }
+            if ([node.name isEqualToString:@"lock"]) {
+                [node setBlendMode:SKBlendModeScreen];
+                continue;
+            }
+            SKSpriteNode * backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:[self.playerData objectForKey:@"SpriteBackground"]];
+            [backgroundNode setPosition:node.position];
+            [backgroundNode setZPosition:-2];
+            [backgroundNode setBlendMode:SKBlendModeScreen];
+            [self addChild:backgroundNode];
         }
         
         //spawns the return to main menu button
