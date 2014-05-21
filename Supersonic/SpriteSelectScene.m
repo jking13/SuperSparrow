@@ -217,6 +217,7 @@ SKNode *selectedButton;
         }
         //select the correct sprite
         [self.playerData setObject:node.name forKey:@"SelectedSprite"];
+        [selectedSprite removeAllActions];
         selectedSprite = (SKSpriteNode*)node;
         [self drawBoxAroundSelectedSprite];
         
@@ -225,6 +226,24 @@ SKNode *selectedButton;
 
 //draws the selection box
 -(void)drawBoxAroundSelectedSprite{
+    //initialize player sprite and add it to the scene
+    NSMutableDictionary *spriteDict = [self.playerData objectForKey:selectedSprite.name];
+    NSMutableArray *runArray = [[NSMutableArray alloc] init];
+    SKAction *runAnimation;
+    NSString *frameName;
+    int count = 1;
+    
+    frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+    // Running player animation
+    while(count<5)
+    {
+        SKTexture * runTexture = [SKTexture textureWithImageNamed:frameName];
+        [runArray addObject:runTexture];
+        count++;
+        frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
+    }
+    runAnimation = [SKAction animateWithTextures:runArray timePerFrame:0.2 resize:YES restore:NO];
+    [selectedSprite runAction:[SKAction repeatActionForever:runAnimation]];
     lightningBorder.position = selectedSprite.position;
 }
 @end
