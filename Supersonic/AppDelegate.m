@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 @interface AppDelegate () <ChartboostDelegate>
 @end
-#define debugResetData 1
+#define debugResetData 0
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
