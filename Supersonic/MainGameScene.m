@@ -37,7 +37,9 @@ NSString *isMuted;
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
         self.backgroundMusicPlayer = appDelegate.backgroundMusicPlayer;
+        if([[self.playerData objectForKey:@"isMusic"] isEqualToString:@"true"]){
         [self.backgroundMusicPlayer play];
+        }
         NSString *spriteType = [self.playerData objectForKey:@"SelectedSprite"];
          NSMutableDictionary *spriteDict = [self.playerData objectForKey:spriteType];
         NSString *playerFile = [spriteDict objectForKey:@"1"];
