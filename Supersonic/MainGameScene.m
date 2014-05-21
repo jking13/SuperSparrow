@@ -18,6 +18,7 @@ SKSpriteNode *lastStreak;
 SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 BOOL gameover;
 NSString *streakFile;
+NSString *isMuted;
 
 @implementation MainGameScene
 
@@ -42,6 +43,7 @@ NSString *streakFile;
         NSString *playerFile = [spriteDict objectForKey:@"1"];
         self.highScore = [self.playerData objectForKey:@"HighScore"];
         self.safeSize = [self.playerData objectForKey:@"Safezone"];
+        isMuted = [self.playerData objectForKey:@"isMuted"];
         
         //set background
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg"];
@@ -242,7 +244,9 @@ NSString *streakFile;
         }
     }*/
     [self.playerNode setPosition:CGPointMake(touchLocation.x, self.playerNode.position.y)];
-    [self runAction:[SKAction playSoundFileNamed:@"whoosh.wav" waitForCompletion:NO]];
+    if([isMuted isEqualToString:@"false"]){
+        [self runAction:[SKAction playSoundFileNamed:@"whoosh.wav" waitForCompletion:NO]];
+    }
     if (lastStreak!=NULL)
     {
         [lastStreak removeAllActions];
@@ -393,7 +397,9 @@ NSString *streakFile;
     NSString *frameName;
     int count = 1;
     frameName = [spriteDict objectForKey:[NSString stringWithFormat:@"%d",count]];
-    [self runAction:[SKAction playSoundFileNamed:@"electricity.wav" waitForCompletion:NO]];
+    if([isMuted isEqualToString:@"false"]){
+        [self runAction:[SKAction playSoundFileNamed:@"electricity.wav" waitForCompletion:NO]];
+    }
     // Running player animation
     while(frameName!=NULL)
     {

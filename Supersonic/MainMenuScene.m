@@ -59,6 +59,27 @@ SKNode *selectedButton;
         spriteSelectLabel.text = @"Sprites";
         spriteSelectLabel.fontSize = 10;
         spriteSelectLabel.position = CGPointMake(spriteSelectLabel.position.x, spriteSelectLabel.position.y-5);
+        
+        //spawns the mute/unmute button
+        if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
+            
+            SKSpriteNode *muteButton =[SKSpriteNode spriteNodeWithImageNamed:@"speaker.png"];
+            muteButton.name = @"muteButton";
+            muteButton.position =CGPointMake(CGRectGetMaxX(self.frame)-45,CGRectGetMaxY(self.frame)-37);
+            muteButton.size = CGSizeMake(40, 32);
+            [self addChild:muteButton];
+        }
+        else {
+            SKSpriteNode *unmuteButton =[SKSpriteNode spriteNodeWithImageNamed:@"speaker2.png"];
+            unmuteButton.name = @"unmuteButton";
+            unmuteButton.position =CGPointMake(CGRectGetMaxX(self.frame)-45,CGRectGetMaxY(self.frame)-37);
+            unmuteButton.size = CGSizeMake(40, 32);
+            [selectedButton removeFromParent];
+            [self addChild:unmuteButton];
+        }
+        
+        
+
         return self;
     }
     return NULL;
@@ -68,7 +89,7 @@ SKNode *selectedButton;
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKNode *node in nodes)
         //presents the game scene
-        if ([node.name isEqualToString:@"playButton"]||[node.name isEqualToString:@"spriteSelectButton"])
+        if ([node.name isEqualToString:@"playButton"]||[node.name isEqualToString:@"spriteSelectButton"]||[node.name isEqualToString:@"muteButton"]||[node.name isEqualToString:@"unmuteButton"])
             selectedButton = node;
     selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
     
@@ -96,7 +117,9 @@ SKNode *selectedButton;
     [transition setPausesOutgoingScene:true];
     [transition setPausesIncomingScene:true];
     selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
-    [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+    if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
+            [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+    }
         //presents the game scene
         if ([selectedButton.name isEqualToString:@"playButton"]) {
             SKView * skView = (SKView *)self.view;
@@ -112,5 +135,25 @@ SKNode *selectedButton;
             scene.scaleMode = SKSceneScaleModeAspectFill;
             [skView presentScene:scene transition:transition];
         }
+    if ([selectedButton.name isEqualToString:@"muteButton"]) {
+        SKSpriteNode *unmuteButton =[SKSpriteNode spriteNodeWithImageNamed:@"speaker2.png"];
+        unmuteButton.name = @"unmuteButton";
+        unmuteButton.position =CGPointMake(CGRectGetMaxX(self.frame)-45,CGRectGetMaxY(self.frame)-37);
+        unmuteButton.size = CGSizeMake(40, 32);
+        [selectedButton removeFromParent];
+        [self addChild:unmuteButton];
+        [self.playerData setObject:@"true" forKey:@"isMuted"];
+        
+    }
+    
+    if ([selectedButton.name isEqualToString:@"unmuteButton"]) {
+        SKSpriteNode *muteButton =[SKSpriteNode spriteNodeWithImageNamed:@"speaker.png"];
+        muteButton.name = @"muteButton";
+        muteButton.position =CGPointMake(CGRectGetMaxX(self.frame)-45,CGRectGetMaxY(self.frame)-37);
+        muteButton.size = CGSizeMake(40, 32);
+        [selectedButton removeFromParent];
+        [self addChild:muteButton];
+        [self.playerData setObject:@"false" forKey:@"isMuted"];
+    }
 }
 @end

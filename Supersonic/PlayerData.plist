@@ -82,6 +82,8 @@
 		<key>5</key>
 		<string>streak.png</string>
 	</dict>
+	<key>isMuted</key>
+	<string>false</string>
 	<key>GreenSparrow</key>
 	<dict>
 		<key>1</key>

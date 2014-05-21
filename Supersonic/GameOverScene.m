@@ -137,7 +137,9 @@ SKNode *selectedButton;
         if ([node.name isEqualToString:@"mainMenuButton"]) {
             if (selectedButton==NULL)
                 return;
-            [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+            if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
+                    [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+            }
             selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
