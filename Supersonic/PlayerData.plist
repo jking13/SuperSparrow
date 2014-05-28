@@ -168,7 +168,7 @@
 	<key>SelectedSprite</key>
 	<string>SuperSparrow</string>
 	<key>HighScore</key>
-	<integer>0</integer>
+	<integer>20</integer>
 	<key>Safezone</key>
 	<integer>60</integer>
 </dict>

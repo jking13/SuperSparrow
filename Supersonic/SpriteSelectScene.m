@@ -43,7 +43,9 @@ NSNumber *highScore;
         //I know this seems like a stupid way to do this, but it is actually the easiest way to ensure order
         NSNumber *spriteReq;
         NSString *lockImage = [self.playerData objectForKey:@"LockBackground"];
-        SKLabelNode *factLabel;
+        SKLabelNode *scoreReqLabel;
+        SKLabelNode *nameLabel;
+        SKLabelNode *outlineLabel;
         sprites = [[NSMutableArray alloc] init];
         NSString *selectedSpriteType = [self.playerData objectForKey:@"SelectedSprite"];
         NSString *spriteString = @"SuperSparrow";
@@ -56,9 +58,21 @@ NSNumber *highScore;
         if ([selectedSpriteType isEqualToString:spriteString]) {
             selectedSprite = sprite;
         }
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
+        [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
+        [sprite addChild:nameLabel];
+        
+        
         spriteString = @"GreenSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
         spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
         if ([highScore intValue]>=[spriteReq intValue]) {
             spriteType = [spriteDict objectForKey:@"1"];
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
@@ -68,22 +82,31 @@ NSNumber *highScore;
             if ([selectedSpriteType isEqualToString:spriteString]) {
                 selectedSprite = sprite;
             }
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
         }
         else
         {
             sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
             [sprites addObject:sprite];
             sprite.name=@"lock";
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
-            [factLabel setFontSize:20];
-            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
-            factLabel.fontColor = [UIColor redColor];
-            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
-            [sprite addChild:factLabel];
+            scoreReqLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [scoreReqLabel setFontSize:20];
+            scoreReqLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            scoreReqLabel.fontColor = [UIColor redColor];
+            [scoreReqLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:scoreReqLabel];
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height)];
         }
+        [sprite addChild:nameLabel];
+        
+        
         spriteString = @"BatSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
         spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
         if ([highScore intValue]>=[spriteReq intValue]) {
             spriteType = [spriteDict objectForKey:@"1"];
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
@@ -93,22 +116,30 @@ NSNumber *highScore;
             if ([selectedSpriteType isEqualToString:spriteString]) {
                 selectedSprite = sprite;
             }
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
         }
         else
         {
             sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
             [sprites addObject:sprite];
             sprite.name=@"lock";
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
-            [factLabel setFontSize:20];
-            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
-            factLabel.fontColor = [UIColor redColor];
-            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
-            [sprite addChild:factLabel];
+            scoreReqLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [scoreReqLabel setFontSize:20];
+            scoreReqLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            scoreReqLabel.fontColor = [UIColor redColor];
+            [scoreReqLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:scoreReqLabel];
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height)];
         }
+        [sprite addChild:nameLabel];
+        
         spriteString = @"PinkSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
         spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
         if ([highScore intValue]>=[spriteReq intValue]) {
             spriteType = [spriteDict objectForKey:@"1"];
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
@@ -118,22 +149,31 @@ NSNumber *highScore;
             if ([selectedSpriteType isEqualToString:spriteString]) {
                 selectedSprite = sprite;
             }
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
         }
         else
         {
             sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
             [sprites addObject:sprite];
             sprite.name=@"lock";
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
-            [factLabel setFontSize:20];
-            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
-            factLabel.fontColor = [UIColor redColor];
-            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
-            [sprite addChild:factLabel];
+            scoreReqLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [scoreReqLabel setFontSize:20];
+            scoreReqLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            scoreReqLabel.fontColor = [UIColor redColor];
+            [scoreReqLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:scoreReqLabel];
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height)];
         }
+        [sprite addChild:nameLabel];
+
+        
         spriteString = @"WolSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
         spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
         if ([highScore intValue]>=[spriteReq intValue]) {
             spriteType = [spriteDict objectForKey:@"1"];
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
@@ -143,22 +183,32 @@ NSNumber *highScore;
             if ([selectedSpriteType isEqualToString:spriteString]) {
                 selectedSprite = sprite;
             }
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
         }
         else
         {
             sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
             [sprites addObject:sprite];
             sprite.name=@"lock";
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
-            [factLabel setFontSize:20];
-            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
-            factLabel.fontColor = [UIColor redColor];
-            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
-            [sprite addChild:factLabel];
+            scoreReqLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [scoreReqLabel setFontSize:20];
+            scoreReqLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            scoreReqLabel.fontColor = [UIColor redColor];
+            [scoreReqLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:scoreReqLabel];
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height)];
         }
+        [sprite addChild:nameLabel];
+
+        
         spriteString = @"IronSparrow";
         spriteDict = [self.playerData objectForKey:spriteString];
         spriteReq = [spriteDict objectForKey:@"ScoreRequirement"];
+        nameLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+        [nameLabel setFontSize:12];
+        nameLabel.text=spriteString;
+        nameLabel.fontColor = [UIColor whiteColor];
+        nameLabel.color = [UIColor whiteColor];
         if ([highScore intValue]>=[spriteReq intValue]) {
             spriteType = [spriteDict objectForKey:@"1"];
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteType];
@@ -168,19 +218,23 @@ NSNumber *highScore;
             if ([selectedSpriteType isEqualToString:spriteString]) {
                 selectedSprite = sprite;
             }
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height-13)];
         }
         else
         {
             sprite = [SKSpriteNode spriteNodeWithImageNamed:lockImage];
             [sprites addObject:sprite];
             sprite.name=@"lock";
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
-            [factLabel setFontSize:20];
-            factLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
-            factLabel.fontColor = [UIColor redColor];
-            [factLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
-            [sprite addChild:factLabel];
+            scoreReqLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-LightOblique"];
+            [scoreReqLabel setFontSize:20];
+            scoreReqLabel.text=[NSString stringWithFormat:@"%d",[spriteReq intValue]];
+            scoreReqLabel.fontColor = [UIColor redColor];
+            [scoreReqLabel setPosition:CGPointMake(0, -sprite.size.height/2)];
+            [sprite addChild:scoreReqLabel];
+            [nameLabel setPosition:CGPointMake(0, -sprite.size.height)];
         }
+        [sprite addChild:nameLabel];
+        
         
         //put the sprites on the screen
         int row = 1;
