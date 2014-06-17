@@ -44,7 +44,8 @@ SKNode *selectedButton;
         
         //make the funny fact
         SKSpriteNode *fact = [[SKSpriteNode alloc] init];
-        [fact setPosition:CGPointMake(self.size.width/2+100, self.size.height/2+150)];
+        fact.size = CGSizeMake(100.0, 120.0);
+        [fact setPosition:CGPointMake(self.size.width/2, self.size.height/2)];
         [fact setZRotation:M_1_PI/4];
         NSMutableDictionary *factsDict = [self.playerData objectForKey:@"Facts"];
         NSNumber *factNum = [factsDict objectForKey:@"Num"];
@@ -58,7 +59,11 @@ SKNode *selectedButton;
             factLabel = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
             factLabel.text=factLine;
             factLabel.fontColor = [UIColor blackColor];
-            [factLabel setPosition:CGPointMake(fact.size.width/2, fact.size.height-factLabel.frame.size.height-factLabel.frame.size.height*count-1)];
+            float factheight = fact.size.height;
+            NSNumber *uint = [NSNumber numberWithUnsignedInteger:[factDict count]];
+            float factcount = [uint floatValue];
+            float facty = factheight/factcount;
+            [factLabel setPosition:CGPointMake((float)fact.size.width/2.0, factheight-30.0*count)];
             [fact addChild:factLabel];
             count++;
             factLine = [factDict objectForKey:[NSString stringWithFormat:@"%d",count]];

@@ -85,7 +85,7 @@ NSNumber *highScore;
             [sprite addChild:nameLabel];
             
         }
-                
+        
         //put the sprites on the screen
         int row = 1;
         int column = 1;

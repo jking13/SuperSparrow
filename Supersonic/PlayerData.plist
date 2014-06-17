@@ -32,7 +32,7 @@
 	<dict>
 		<key>Num</key>
 		<integer>3</integer>
-		<key>1</key>
+		<key>3</key>
 		<dict>
 			<key>1</key>
 			<string>Did you know?</string>
@@ -52,7 +52,7 @@
 			<key>3</key>
 			<string>is for quitters.</string>
 		</dict>
-		<key>3</key>
+		<key>1</key>
 		<dict>
 			<key>1</key>
 			<string>Did you know?</string>
