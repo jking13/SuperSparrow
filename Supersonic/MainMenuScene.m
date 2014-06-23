@@ -12,6 +12,7 @@
 SKNode *selectedButton;
 @implementation MainMenuScene
 
+NSString *fontName =@"Helvetica-Oblique";
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         //bring in data
@@ -31,6 +32,15 @@ SKNode *selectedButton;
         NSString *logoString = [self.playerData objectForKey:@"TitleLogo"];
         SKSpriteNode *logo = [SKSpriteNode spriteNodeWithImageNamed:logoString];
         [logo setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+100)];
+        
+        //spawn the title logo background
+        SKSpriteNode *logoBackground = [SKSpriteNode spriteNodeWithImageNamed:@"plain-blue-gradient.png"];
+        [logoBackground setCenterRect:CGRectMake(25.0/100.0, 15.0/70.0, 50.0/100.0, 40.0/70.0)];
+        [logoBackground setPosition:logo.position];
+        [logoBackground setXScale:logo.size.width/100.0*2.3];
+        [logoBackground setYScale:logo.size.height/70.0*2.3];
+        [logoBackground setAlpha:0.3];
+        [self addChild:logoBackground];
         [self addChild:logo];
         
         //spawns the play button
@@ -41,7 +51,7 @@ SKNode *selectedButton;
         playButton.size = CGSizeMake(80, 32);
         playButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
         [self addChild:playButton];
-        SKLabelNode *playLabel = [SKLabelNode labelNodeWithFontNamed:@"Times"];
+        SKLabelNode *playLabel = [SKLabelNode labelNodeWithFontNamed:fontName];
         [playButton addChild:playLabel];
         playLabel.text = @"Play";
         playLabel.fontSize = 10;
@@ -54,9 +64,9 @@ SKNode *selectedButton;
         spriteSelectButton.size = CGSizeMake(80, 32);
         spriteSelectButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
         [self addChild:spriteSelectButton];
-        SKLabelNode *spriteSelectLabel = [SKLabelNode labelNodeWithFontNamed:@"Times"];
+        SKLabelNode *spriteSelectLabel = [SKLabelNode labelNodeWithFontNamed:fontName];
         [spriteSelectButton addChild:spriteSelectLabel];
-        spriteSelectLabel.text = @"Sprites";
+        spriteSelectLabel.text = @"Characters";
         spriteSelectLabel.fontSize = 10;
         spriteSelectLabel.position = CGPointMake(spriteSelectLabel.position.x, spriteSelectLabel.position.y-5);
         

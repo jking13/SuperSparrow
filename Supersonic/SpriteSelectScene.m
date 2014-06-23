@@ -119,7 +119,7 @@ NSNumber *highScore;
         mainMenuButton.position =CGPointMake(mainMenuButton.size.width/2+10, size.height-mainMenuButton.size.height/2-10);
         mainMenuButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
         [self addChild:mainMenuButton];
-        SKLabelNode *mainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Times"];
+        SKLabelNode *mainMenuLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-Oblique"];
         [mainMenuButton addChild:mainMenuLabel];
         mainMenuLabel.text = @"Main Menu";
         mainMenuLabel.fontSize = 10;
