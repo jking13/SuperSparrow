@@ -9,8 +9,12 @@
 #import "GameOverScene.h"
 #import "AppDelegate.h"
 #import "MainMenuScene.h"
+#import "MainGameScene.h"
 SKNode *selectedButton;
+NSString *highScoreFont = @"Noteworthy-Bold";
+NSString *factFont = @"GurmukhiMN-Bold";
 @implementation GameOverScene
+
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -42,6 +46,19 @@ SKNode *selectedButton;
         mainMenuLabel.fontSize = 10;
         mainMenuLabel.position = CGPointMake(mainMenuLabel.position.x, mainMenuLabel.position.y-5);
         
+        //spawns the return to replay button
+        SKSpriteNode *replayButton =[SKSpriteNode spriteNodeWithImageNamed:buttonScale];
+        replayButton.name = @"replayButton";
+        replayButton.size = CGSizeMake(80, 32);
+        replayButton.position =CGPointMake(mainMenuButton.frame.origin.x+mainMenuButton.frame.size.width+replayButton.size.width/2.0+10, mainMenuButton.position.y);
+        replayButton.centerRect = CGRectMake(36.0/80.0,5.0/32.0,4.0/80.0,22.0/32.0);
+        [self addChild:replayButton];
+        SKLabelNode *replayLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica-Oblique"];
+        [replayButton addChild:replayLabel];
+        replayLabel.text = @"Play Again";
+        replayLabel.fontSize = 10;
+        replayLabel.position = CGPointMake(replayLabel.position.x, replayLabel.position.y-5);
+        
         //make the funny fact
         SKSpriteNode *fact = [[SKSpriteNode alloc] init];
         fact.size = CGSizeMake(100.0, 120.0);
@@ -56,13 +73,11 @@ SKNode *selectedButton;
         NSString *factLine = [factDict objectForKey:[NSString stringWithFormat:@"%d",count]];
         while (factLine!=NULL) {
             SKLabelNode *factLabel;
-            factLabel = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
+            factLabel = [SKLabelNode labelNodeWithFontNamed:factFont];
             factLabel.text=factLine;
-            factLabel.fontColor = [UIColor blackColor];
+            factLabel.fontColor = [UIColor redColor];
+            factLabel.fontSize = 25;
             float factheight = fact.size.height;
-            NSNumber *uint = [NSNumber numberWithUnsignedInteger:[factDict count]];
-            float factcount = [uint floatValue];
-            float facty = factheight/factcount;
             [factLabel setPosition:CGPointMake((float)fact.size.width/2.0, factheight-30.0*count)];
             [fact addChild:factLabel];
             count++;
@@ -84,22 +99,36 @@ SKNode *selectedButton;
         highScore = self.lastScore;
     }
     
+    
+    
     //initialize score label and add to scene
     SKLabelNode *scoreNode;
-    scoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
+    scoreNode = [SKLabelNode labelNodeWithFontNamed:highScoreFont];
     scoreNode.text=[NSString stringWithFormat:@"Score: %d",score];
-    scoreNode.fontColor = [UIColor blackColor];
+    scoreNode.fontColor = [UIColor blueColor];
+    scoreNode.fontSize = 30;
     [scoreNode setPosition:CGPointMake(self.size.width/2-50, self.size.height/2-50)];
-    [self addChild:scoreNode];
     
     //initialize high score label and add to scene
     score = [highScore intValue];
     SKLabelNode *highScoreNode;
-    highScoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
+    highScoreNode = [SKLabelNode labelNodeWithFontNamed:highScoreFont];
     highScoreNode.text=[NSString stringWithFormat:@"High Score: %d",score];
-    highScoreNode.fontColor = [UIColor blackColor];
+    highScoreNode.fontColor = [UIColor blueColor];
+    highScoreNode.fontSize = 30;
     [highScoreNode setPosition:CGPointMake(self.size.width/2-100, self.size.height/2-100)];
+    
+    SKSpriteNode *logoBackground = [SKSpriteNode spriteNodeWithImageNamed:@"plain-blue-gradient.png"];
+    [logoBackground setCenterRect:CGRectMake(25.0/100.0, 15.0/70.0, 50.0/100.0, 40.0/70.0)];
+    [logoBackground setPosition:CGPointMake(self.size.width/2-100, self.size.height/2-62)];
+    [logoBackground setXScale:highScoreNode.frame.size.width/100.0*2.3];
+    [logoBackground setYScale:(highScoreNode.frame.size.height+scoreNode.frame.size.height+20)/70.0*2.3];
+    [logoBackground setAlpha:0.85];
+    
+    
+    [self addChild:logoBackground];
     [self addChild:highScoreNode];
+    [self addChild:scoreNode];
     
     
     //[[Chartboost sharedChartboost] showInterstitial];
@@ -109,7 +138,7 @@ SKNode *selectedButton;
     NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
     for (SKNode *node in nodes)
         //presents the game scene
-        if ([node.name isEqualToString:@"mainMenuButton"])
+        if ([node.name isEqualToString:@"mainMenuButton"]||[node.name isEqualToString:@"replayButton"])
             selectedButton = node;
     selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
     
@@ -148,6 +177,20 @@ SKNode *selectedButton;
             selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
+            scene.scaleMode = SKSceneScaleModeAspectFill;
+            [skView presentScene:scene transition:transition];
+            return;
+        }
+        //replay
+        if ([node.name isEqualToString:@"replayButton"]) {
+            if (selectedButton==NULL)
+                return;
+            if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
+                [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
+            }
+            selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+            SKView * skView = (SKView *)self.view;
+            SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
             [skView presentScene:scene transition:transition];
             return;

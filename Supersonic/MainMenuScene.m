@@ -40,7 +40,7 @@ NSString *fontName =@"Helvetica-Oblique";
         [logoBackground setXScale:logo.size.width/100.0*2.3];
         [logoBackground setYScale:logo.size.height/70.0*2.3];
         [logoBackground setAlpha:0.3];
-        [self addChild:logoBackground];
+        //[self addChild:logoBackground];
         [self addChild:logo];
         
         //spawns the play button
