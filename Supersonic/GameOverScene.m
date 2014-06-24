@@ -13,6 +13,7 @@
 SKNode *selectedButton;
 NSString *highScoreFont = @"Noteworthy-Bold";
 NSString *factFont = @"GurmukhiMN-Bold";
+NSString *deathFont = @"Cochin-BoldItalic";
 @implementation GameOverScene
 
 
@@ -94,6 +95,9 @@ NSString *factFont = @"GurmukhiMN-Bold";
     
     self.lastScore=[NSNumber numberWithInt:score];
     NSNumber *highScore = [self.playerData objectForKey:@"HighScore"];
+    NSNumber *deathCount = [self.playerData objectForKey:@"DeathCount"];
+    deathCount = [NSNumber numberWithInt:([deathCount intValue]+1)];
+    [self.playerData setObject:deathCount forKey:@"DeathCount"];
     if ([self.lastScore intValue]>[highScore intValue]) {
         [self.playerData setObject:self.lastScore forKey:@"HighScore"];
         highScore = self.lastScore;
@@ -129,6 +133,17 @@ NSString *factFont = @"GurmukhiMN-Bold";
     [self addChild:logoBackground];
     [self addChild:highScoreNode];
     [self addChild:scoreNode];
+    
+    
+    //death count
+    //initialize score label and add to scene
+    SKLabelNode *deathNode;
+    deathNode = [SKLabelNode labelNodeWithFontNamed:deathFont];
+    deathNode.text=[NSString stringWithFormat:@"Fried Sparrows: %d",[deathCount intValue]];
+    deathNode.fontColor = [UIColor redColor];
+    deathNode.fontSize = 20;
+    [deathNode setPosition:CGPointMake(logoBackground.position.x+logoBackground.size.width, deathNode.frame.size.height)];
+    [self addChild:deathNode];
     
     
     //[[Chartboost sharedChartboost] showInterstitial];

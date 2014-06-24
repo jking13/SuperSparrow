@@ -19,7 +19,8 @@ SKSpriteNode *moveBanner; //movement banner displayed on Main Game load
 BOOL gameover;
 NSString *streakFile;
 NSString *isMuted;
-
+NSString *countdownFont = @"Copperplate-Bold";
+NSString *scoreFont = @"Noteworthy-Bold";
 @implementation MainGameScene
 
 - (id)initWithSize:(CGSize)size {
@@ -73,7 +74,7 @@ NSString *isMuted;
         
         self.playerNode = [SKSpriteNode spriteNodeWithImageNamed:playerFile];
         [self.playerNode runAction:[SKAction repeatActionForever:runAnimation]];
-        [self.playerNode setPosition:CGPointMake(size.width / 2 - 50, size.height / 2 - 100)];
+        [self.playerNode setPosition:CGPointMake(size.width / 2, size.height / 2 - 100)];
         [self addChild:self.playerNode];
         [self.playerNode setZPosition:1];
         
@@ -89,9 +90,9 @@ NSString *isMuted;
         [moveBanner runAction:[SKAction repeatActionForever:group]];
         
         //initialize score label and add to scene
-        self.scoreNode = [SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
+        self.scoreNode = [SKLabelNode labelNodeWithFontNamed:scoreFont];
         self.scoreNode.text=[NSString stringWithFormat:@"%d",scoreCount];
-        self.scoreNode.fontColor = [UIColor blackColor];
+        self.scoreNode.fontColor = [UIColor redColor];
         [self.scoreNode setPosition:CGPointMake(self.size.width - 40, self.size.height - (self.size.height-10))];
         [self addChild:self.scoreNode];
     
@@ -277,9 +278,11 @@ NSString *isMuted;
 -(void)countDown:(int) count{
     
     //configure and add the countdown label
-    SKLabelNode *countNode=[SKLabelNode labelNodeWithFontNamed:@"AmericanTypewriter-Bold"];
+    SKLabelNode *countNode=[SKLabelNode labelNodeWithFontNamed:countdownFont];
     countNode.text=[NSString stringWithFormat:@"%d",count];
-    countNode.fontColor=[UIColor blackColor];
+    if(count==0)
+        countNode.text=@"DODGE!";
+    countNode.fontColor=[UIColor redColor];
     [countNode setPosition:CGPointMake(self.size.width/2, self.size.height / 2)];
     [self addChild:countNode];
     
@@ -293,7 +296,7 @@ NSString *isMuted;
     //run the action
     [countNode runAction:group completion:^{
         [countNode removeFromParent];
-        if (count<=1)
+        if (count<=0)
             [self spawnCeilings];
         else
             [self countDown:count-1];
