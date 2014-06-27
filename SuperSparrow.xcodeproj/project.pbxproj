@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		520026E318FB683600FE6850 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E218FB683600FE6850 /* QuartzCore.framework */; };
 		520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E418FB684600FE6850 /* SystemConfiguration.framework */; };
-		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EC18FB704E00FE6850 /* CHANGELOG.md */; };
 		520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026EE18FB704E00FE6850 /* libChartboost.a */; };
 		520026F218FB704E00FE6850 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EF18FB704E00FE6850 /* README.md */; };
@@ -32,7 +32,7 @@
 		5232F73E18F2403D009EEB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71618F2403D009EEB77 /* Foundation.framework */; };
 		5232F73F18F2403D009EEB77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71A18F2403D009EEB77 /* UIKit.framework */; };
 		5232F74718F2403D009EEB77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5232F74518F2403D009EEB77 /* InfoPlist.strings */; };
-		5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SupersonicTests.m */; };
+		5232F74918F2403D009EEB77 /* SuperSparrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SuperSparrowTests.m */; };
 		5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75318F387FB009EEB77 /* MainGameScene.m */; };
 		5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75618F4EAD4009EEB77 /* Ceiling.m */; };
 		52A711DB195CEFC200CAA2AC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 52A711B3195CEFC200CAA2AC /* .gitignore */; };
@@ -73,12 +73,12 @@
 		52203CAB18F61823001D4575 /* SpriteSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteSelectScene.m; sourceTree = "<group>"; };
 		52203CAD18F77AF0001D4575 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		52203CAE18F77AF0001D4575 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
-		5232F71318F2403D009EEB77 /* Supersonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supersonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5232F71318F2403D009EEB77 /* SuperSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F71618F2403D009EEB77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5232F71818F2403D009EEB77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5232F71A18F2403D009EEB77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5232F71C18F2403D009EEB77 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		5232F72018F2403D009EEB77 /* Supersonic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Supersonic-Info.plist"; sourceTree = "<group>"; };
+		5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperSparrow-Info.plist"; sourceTree = "<group>"; };
 		5232F72218F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5232F72418F2403D009EEB77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supersonic-Prefix.pch"; sourceTree = "<group>"; };
@@ -88,11 +88,11 @@
 		5232F72D18F2403D009EEB77 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5232F72E18F2403D009EEB77 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5232F73518F2403D009EEB77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupersonicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperSparrowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F73C18F2403D009EEB77 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5232F74418F2403D009EEB77 /* SupersonicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SupersonicTests-Info.plist"; sourceTree = "<group>"; };
+		5232F74418F2403D009EEB77 /* SuperSparrowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperSparrowTests-Info.plist"; sourceTree = "<group>"; };
 		5232F74618F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5232F74818F2403D009EEB77 /* SupersonicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupersonicTests.m; sourceTree = "<group>"; };
+		5232F74818F2403D009EEB77 /* SuperSparrowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperSparrowTests.m; sourceTree = "<group>"; };
 		5232F75218F387FB009EEB77 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
 		5232F75318F387FB009EEB77 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
 		5232F75518F4EAD4009EEB77 /* Ceiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ceiling.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		5232F70A18F2403D009EEB77 = {
 			isa = PBXGroup;
 			children = (
-				5232F71E18F2403D009EEB77 /* Supersonic */,
-				5232F74218F2403D009EEB77 /* SupersonicTests */,
+				5232F71E18F2403D009EEB77 /* SuperSparrow */,
+				5232F74218F2403D009EEB77 /* SuperSparrowTests */,
 				5232F71518F2403D009EEB77 /* Frameworks */,
 				5232F71418F2403D009EEB77 /* Products */,
 				83C22A01190B7D81009C0A9C /* Sounds */,
@@ -198,8 +198,8 @@
 		5232F71418F2403D009EEB77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5232F71318F2403D009EEB77 /* Supersonic.app */,
-				5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */,
+				5232F71318F2403D009EEB77 /* SuperSparrow.app */,
+				5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5232F71E18F2403D009EEB77 /* Supersonic */ = {
+		5232F71E18F2403D009EEB77 /* SuperSparrow */ = {
 			isa = PBXGroup;
 			children = (
 				5232F72718F2403D009EEB77 /* AppDelegate.h */,
@@ -244,13 +244,14 @@
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
+			name = SuperSparrow;
 			path = Supersonic;
 			sourceTree = "<group>";
 		};
 		5232F71F18F2403D009EEB77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5232F72018F2403D009EEB77 /* Supersonic-Info.plist */,
+				5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */,
 				5232F72118F2403D009EEB77 /* InfoPlist.strings */,
 				5232F72418F2403D009EEB77 /* main.m */,
 				5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */,
@@ -259,19 +260,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5232F74218F2403D009EEB77 /* SupersonicTests */ = {
+		5232F74218F2403D009EEB77 /* SuperSparrowTests */ = {
 			isa = PBXGroup;
 			children = (
-				5232F74818F2403D009EEB77 /* SupersonicTests.m */,
+				5232F74818F2403D009EEB77 /* SuperSparrowTests.m */,
 				5232F74318F2403D009EEB77 /* Supporting Files */,
 			);
+			name = SuperSparrowTests;
 			path = SupersonicTests;
 			sourceTree = "<group>";
 		};
 		5232F74318F2403D009EEB77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5232F74418F2403D009EEB77 /* SupersonicTests-Info.plist */,
+				5232F74418F2403D009EEB77 /* SuperSparrowTests-Info.plist */,
 				5232F74518F2403D009EEB77 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -306,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5232F71218F2403D009EEB77 /* Supersonic */ = {
+		5232F71218F2403D009EEB77 /* SuperSparrow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "Supersonic" */;
+			buildConfigurationList = 5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrow" */;
 			buildPhases = (
 				5232F70F18F2403D009EEB77 /* Sources */,
 				5232F71018F2403D009EEB77 /* Frameworks */,
@@ -318,14 +320,14 @@
 			);
 			dependencies = (
 			);
-			name = Supersonic;
+			name = SuperSparrow;
 			productName = Supersonic;
-			productReference = 5232F71318F2403D009EEB77 /* Supersonic.app */;
+			productReference = 5232F71318F2403D009EEB77 /* SuperSparrow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5232F73A18F2403D009EEB77 /* SupersonicTests */ = {
+		5232F73A18F2403D009EEB77 /* SuperSparrowTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SupersonicTests" */;
+			buildConfigurationList = 5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrowTests" */;
 			buildPhases = (
 				5232F73718F2403D009EEB77 /* Sources */,
 				5232F73818F2403D009EEB77 /* Frameworks */,
@@ -336,9 +338,9 @@
 			dependencies = (
 				5232F74118F2403D009EEB77 /* PBXTargetDependency */,
 			);
-			name = SupersonicTests;
+			name = SuperSparrowTests;
 			productName = SupersonicTests;
-			productReference = 5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */;
+			productReference = 5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +350,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "John King";
+				ORGANIZATIONNAME = SpitballStudios;
 				TargetAttributes = {
 					5232F71218F2403D009EEB77 = {
 						DevelopmentTeam = 6QC3FS38XU;
@@ -358,7 +360,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "Supersonic" */;
+			buildConfigurationList = 5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "SuperSparrow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -402,8 +404,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5232F71218F2403D009EEB77 /* Supersonic */,
-				5232F73A18F2403D009EEB77 /* SupersonicTests */,
+				5232F71218F2403D009EEB77 /* SuperSparrow */,
+				5232F73A18F2403D009EEB77 /* SuperSparrowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */,
+				5232F74918F2403D009EEB77 /* SuperSparrowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +473,7 @@
 /* Begin PBXTargetDependency section */
 		5232F74118F2403D009EEB77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5232F71218F2403D009EEB77 /* Supersonic */;
+			target = 5232F71218F2403D009EEB77 /* SuperSparrow */;
 			targetProxy = 5232F74018F2403D009EEB77 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -620,15 +622,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
+				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSparrow;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -641,15 +643,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
+				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSparrow;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -670,8 +672,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SupersonicTests/SupersonicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SupersonicTests/SuperSparrowTests-Info.plist";
+				PRODUCT_NAME = SuperSparrowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -688,8 +690,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "SupersonicTests/SupersonicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SupersonicTests/SuperSparrowTests-Info.plist";
+				PRODUCT_NAME = SuperSparrowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -698,7 +700,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "Supersonic" */ = {
+		5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "SuperSparrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F74A18F2403D009EEB77 /* Debug */,
@@ -707,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "Supersonic" */ = {
+		5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F74D18F2403D009EEB77 /* Debug */,
@@ -716,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SupersonicTests" */ = {
+		5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrowTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F75018F2403D009EEB77 /* Debug */,

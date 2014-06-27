@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5232F71218F2403D009EEB77"
-               BuildableName = "Supersonic.app"
-               BlueprintName = "Supersonic"
-               ReferencedContainer = "container:Supersonic.xcodeproj">
+               BuildableName = "SuperSparrow.app"
+               BlueprintName = "SuperSparrow"
+               ReferencedContainer = "container:SuperSparrow.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5232F73A18F2403D009EEB77"
-               BuildableName = "SupersonicTests.xctest"
-               BlueprintName = "SupersonicTests"
-               ReferencedContainer = "container:Supersonic.xcodeproj">
+               BuildableName = "SuperSparrowTests.xctest"
+               BlueprintName = "SuperSparrowTests"
+               ReferencedContainer = "container:SuperSparrow.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5232F71218F2403D009EEB77"
-            BuildableName = "Supersonic.app"
-            BlueprintName = "Supersonic"
-            ReferencedContainer = "container:Supersonic.xcodeproj">
+            BuildableName = "SuperSparrow.app"
+            BlueprintName = "SuperSparrow"
+            ReferencedContainer = "container:SuperSparrow.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5232F71218F2403D009EEB77"
-            BuildableName = "Supersonic.app"
-            BlueprintName = "Supersonic"
-            ReferencedContainer = "container:Supersonic.xcodeproj">
+            BuildableName = "SuperSparrow.app"
+            BlueprintName = "SuperSparrow"
+            ReferencedContainer = "container:SuperSparrow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5232F71218F2403D009EEB77"
-            BuildableName = "Supersonic.app"
-            BlueprintName = "Supersonic"
-            ReferencedContainer = "container:Supersonic.xcodeproj">
+            BuildableName = "SuperSparrow.app"
+            BlueprintName = "SuperSparrow"
+            ReferencedContainer = "container:SuperSparrow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
