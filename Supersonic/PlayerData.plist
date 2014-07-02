@@ -33,7 +33,143 @@
 	<key>Facts</key>
 	<dict>
 		<key>Num</key>
-		<integer>3</integer>
+		<integer>17</integer>
+		<key>17</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Mozart wrote &quot;Twinkle,</string>
+			<key>3</key>
+			<string>Twinkle, Little Star.&quot;</string>
+			<key>4</key>
+			<string>Seriously.</string>
+		</dict>
+		<key>16</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Microwave on High for</string>
+			<key>3</key>
+			<string>30 seconds or until</string>
+			<key>4</key>
+			<string>cheese is bubbly.</string>
+		</dict>
+		<key>15</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>I LOVE boneless pork butt.</string>
+			<key>3</key>
+			<string>Don&apos;t you?</string>
+		</dict>
+		<key>14</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>You... uh... You have</string>
+			<key>3</key>
+			<string>a little something</string>
+			<key>4</key>
+			<string>in your teeth...</string>
+		</dict>
+		<key>13</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Shake me! Bake me!</string>
+			<key>3</key>
+			<string>Salisbury Steak me!</string>
+		</dict>
+		<key>12</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>My pants are</string>
+			<key>3</key>
+			<string>ill-fitting.</string>
+		</dict>
+		<key>11</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>My psychic friend says</string>
+			<key>3</key>
+			<string>love is in my future.</string>
+		</dict>
+		<key>10</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>This game was originally</string>
+			<key>3</key>
+			<string>called Supersonic but was</string>
+			<key>4</key>
+			<string>changed for legal reasons.</string>
+		</dict>
+		<key>9</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Never put red socks</string>
+			<key>3</key>
+			<string>in with your whites.</string>
+			<key>4</key>
+			<string>Also, always buy bleach.</string>
+		</dict>
+		<key>8</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>There&apos;s someone</string>
+			<key>3</key>
+			<string>right behind you!</string>
+		</dict>
+		<key>7</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Condescension is fun!</string>
+		</dict>
+		<key>6</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Spitball Studios, LLC was</string>
+			<key>3</key>
+			<string>voted &quot;Most Likely To Spit&quot;</string>
+			<key>4</key>
+			<string>by a panel of its peers.</string>
+		</dict>
+		<key>5</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>Up, Up, Down, Down, Left,</string>
+			<key>3</key>
+			<string>Right, Left, Right, B, A, Start</string>
+		</dict>
+		<key>4</key>
+		<dict>
+			<key>1</key>
+			<string>Did you know?</string>
+			<key>2</key>
+			<string>This game now has</string>
+			<key>3</key>
+			<string>50% less genocide!</string>
+		</dict>
 		<key>3</key>
 		<dict>
 			<key>1</key>
@@ -41,7 +177,7 @@
 			<key>2</key>
 			<string>This game is</string>
 			<key>3</key>
-			<string>1188 lines of</string>
+			<string>1463 lines of</string>
 			<key>4</key>
 			<string>code.</string>
 		</dict>
