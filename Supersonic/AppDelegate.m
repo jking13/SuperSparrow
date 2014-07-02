@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Appirater.h"
 @interface AppDelegate () <ChartboostDelegate>
 @end
 #define debugResetData 0
@@ -34,6 +35,15 @@
         pdata = [[NSMutableDictionary alloc] initWithContentsOfFile:plistFilePathInMainBundle];
     }
     self.playerData = pdata;
+    
+    [Appirater setAppId:@"567173760"];//this needs to be changed to our app id
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:25];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:YES];
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
 							
@@ -55,6 +65,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 

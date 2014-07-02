@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MainMenuScene.h"
 #import "MainGameScene.h"
+#import "Appirater.h"
 SKNode *selectedButton;
 NSString *highScoreFont = @"Noteworthy-Bold";
 NSString *factFont = @"GurmukhiMN-Bold";
@@ -146,7 +147,9 @@ NSString *deathFont = @"Cochin-BoldItalic";
     [self addChild:deathNode];
     
     
+    
     //[[Chartboost sharedChartboost] showInterstitial];
+    [Appirater userDidSignificantEvent:YES];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];

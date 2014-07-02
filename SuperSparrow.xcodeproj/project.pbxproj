@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		520026E318FB683600FE6850 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E218FB683600FE6850 /* QuartzCore.framework */; };
 		520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E418FB684600FE6850 /* SystemConfiguration.framework */; };
-		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EC18FB704E00FE6850 /* CHANGELOG.md */; };
 		520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026EE18FB704E00FE6850 /* libChartboost.a */; };
 		520026F218FB704E00FE6850 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EF18FB704E00FE6850 /* README.md */; };
@@ -32,9 +32,15 @@
 		5232F73E18F2403D009EEB77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71618F2403D009EEB77 /* Foundation.framework */; };
 		5232F73F18F2403D009EEB77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5232F71A18F2403D009EEB77 /* UIKit.framework */; };
 		5232F74718F2403D009EEB77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5232F74518F2403D009EEB77 /* InfoPlist.strings */; };
-		5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SupersonicTests.m */; };
+		5232F74918F2403D009EEB77 /* SuperSparrowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F74818F2403D009EEB77 /* SuperSparrowTests.m */; };
 		5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75318F387FB009EEB77 /* MainGameScene.m */; };
 		5232F75718F4EAD4009EEB77 /* Ceiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5232F75618F4EAD4009EEB77 /* Ceiling.m */; };
+		52A711DB195CEFC200CAA2AC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 52A711B3195CEFC200CAA2AC /* .gitignore */; };
+		52A711DC195CEFC200CAA2AC /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A711B5195CEFC200CAA2AC /* Appirater.m */; };
+		52A711DD195CEFC200CAA2AC /* Appirater.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 52A711B6195CEFC200CAA2AC /* Appirater.podspec */; };
+		52A711DE195CEFC200CAA2AC /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52A711B8195CEFC200CAA2AC /* AppiraterLocalizable.strings */; };
+		52A711DF195CEFC200CAA2AC /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 52A711BB195CEFC200CAA2AC /* CHANGELOG.md */; };
+		52A711E0195CEFC200CAA2AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52A711D0195CEFC200CAA2AC /* README.md */; };
 		83C22A05190B7D81009C0A9C /* electricity.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A02190B7D81009C0A9C /* electricity.wav */; };
 		83C22A07190B7D81009C0A9C /* whoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A04190B7D81009C0A9C /* whoosh.wav */; };
 		83C22A09190B80F3009C0A9C /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83C22A08190B80F3009C0A9C /* select.wav */; };
@@ -67,12 +73,12 @@
 		52203CAB18F61823001D4575 /* SpriteSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteSelectScene.m; sourceTree = "<group>"; };
 		52203CAD18F77AF0001D4575 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		52203CAE18F77AF0001D4575 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
-		5232F71318F2403D009EEB77 /* Supersonic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supersonic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5232F71318F2403D009EEB77 /* SuperSparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F71618F2403D009EEB77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5232F71818F2403D009EEB77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5232F71A18F2403D009EEB77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5232F71C18F2403D009EEB77 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		5232F72018F2403D009EEB77 /* Supersonic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Supersonic-Info.plist"; sourceTree = "<group>"; };
+		5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperSparrow-Info.plist"; sourceTree = "<group>"; };
 		5232F72218F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5232F72418F2403D009EEB77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supersonic-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,15 +88,54 @@
 		5232F72D18F2403D009EEB77 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5232F72E18F2403D009EEB77 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5232F73518F2403D009EEB77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupersonicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperSparrowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5232F73C18F2403D009EEB77 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5232F74418F2403D009EEB77 /* SupersonicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SupersonicTests-Info.plist"; sourceTree = "<group>"; };
+		5232F74418F2403D009EEB77 /* SuperSparrowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperSparrowTests-Info.plist"; sourceTree = "<group>"; };
 		5232F74618F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5232F74818F2403D009EEB77 /* SupersonicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupersonicTests.m; sourceTree = "<group>"; };
+		5232F74818F2403D009EEB77 /* SuperSparrowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperSparrowTests.m; sourceTree = "<group>"; };
 		5232F75218F387FB009EEB77 /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
 		5232F75318F387FB009EEB77 /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameScene.m; sourceTree = "<group>"; };
 		5232F75518F4EAD4009EEB77 /* Ceiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ceiling.h; sourceTree = "<group>"; };
 		5232F75618F4EAD4009EEB77 /* Ceiling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ceiling.m; sourceTree = "<group>"; };
+		52A711B3195CEFC200CAA2AC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		52A711B4195CEFC200CAA2AC /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		52A711B5195CEFC200CAA2AC /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		52A711B6195CEFC200CAA2AC /* Appirater.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appirater.podspec; sourceTree = "<group>"; };
+		52A711B7195CEFC200CAA2AC /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		52A711B9195CEFC200CAA2AC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711BA195CEFC200CAA2AC /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711BB195CEFC200CAA2AC /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		52A711BC195CEFC200CAA2AC /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711BD195CEFC200CAA2AC /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711BE195CEFC200CAA2AC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711BF195CEFC200CAA2AC /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C0195CEFC200CAA2AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C1195CEFC200CAA2AC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C2195CEFC200CAA2AC /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C3195CEFC200CAA2AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C4195CEFC200CAA2AC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C5195CEFC200CAA2AC /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C6195CEFC200CAA2AC /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C7195CEFC200CAA2AC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C8195CEFC200CAA2AC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711C9195CEFC200CAA2AC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711CA195CEFC200CAA2AC /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711CB195CEFC200CAA2AC /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711CC195CEFC200CAA2AC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711CD195CEFC200CAA2AC /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711CE195CEFC200CAA2AC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		52A711CF195CEFC200CAA2AC /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D0195CEFC200CAA2AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		52A711D1195CEFC200CAA2AC /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D2195CEFC200CAA2AC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D3195CEFC200CAA2AC /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D4195CEFC200CAA2AC /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D5195CEFC200CAA2AC /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D6195CEFC200CAA2AC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D7195CEFC200CAA2AC /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D8195CEFC200CAA2AC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52A711D9195CEFC200CAA2AC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		52A711DA195CEFC200CAA2AC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		83C229FF190B7776009C0A9C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		83C22A02190B7D81009C0A9C /* electricity.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electricity.wav; sourceTree = "<group>"; };
 		83C22A04190B7D81009C0A9C /* whoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whoosh.wav; sourceTree = "<group>"; };
@@ -142,8 +187,8 @@
 		5232F70A18F2403D009EEB77 = {
 			isa = PBXGroup;
 			children = (
-				5232F71E18F2403D009EEB77 /* Supersonic */,
-				5232F74218F2403D009EEB77 /* SupersonicTests */,
+				5232F71E18F2403D009EEB77 /* SuperSparrow */,
+				5232F74218F2403D009EEB77 /* SuperSparrowTests */,
 				5232F71518F2403D009EEB77 /* Frameworks */,
 				5232F71418F2403D009EEB77 /* Products */,
 				83C22A01190B7D81009C0A9C /* Sounds */,
@@ -153,8 +198,8 @@
 		5232F71418F2403D009EEB77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5232F71318F2403D009EEB77 /* Supersonic.app */,
-				5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */,
+				5232F71318F2403D009EEB77 /* SuperSparrow.app */,
+				5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +221,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5232F71E18F2403D009EEB77 /* Supersonic */ = {
+		5232F71E18F2403D009EEB77 /* SuperSparrow */ = {
 			isa = PBXGroup;
 			children = (
 				5232F72718F2403D009EEB77 /* AppDelegate.h */,
@@ -194,17 +239,19 @@
 				52203CAB18F61823001D4575 /* SpriteSelectScene.m */,
 				52203CAD18F77AF0001D4575 /* GameOverScene.h */,
 				52203CAE18F77AF0001D4575 /* GameOverScene.m */,
+				52A711B2195CEFC200CAA2AC /* appirater-master */,
 				520026EB18FB704E00FE6850 /* Chartboost */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
+			name = SuperSparrow;
 			path = Supersonic;
 			sourceTree = "<group>";
 		};
 		5232F71F18F2403D009EEB77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5232F72018F2403D009EEB77 /* Supersonic-Info.plist */,
+				5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */,
 				5232F72118F2403D009EEB77 /* InfoPlist.strings */,
 				5232F72418F2403D009EEB77 /* main.m */,
 				5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */,
@@ -213,22 +260,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5232F74218F2403D009EEB77 /* SupersonicTests */ = {
+		5232F74218F2403D009EEB77 /* SuperSparrowTests */ = {
 			isa = PBXGroup;
 			children = (
-				5232F74818F2403D009EEB77 /* SupersonicTests.m */,
+				5232F74818F2403D009EEB77 /* SuperSparrowTests.m */,
 				5232F74318F2403D009EEB77 /* Supporting Files */,
 			);
+			name = SuperSparrowTests;
 			path = SupersonicTests;
 			sourceTree = "<group>";
 		};
 		5232F74318F2403D009EEB77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5232F74418F2403D009EEB77 /* SupersonicTests-Info.plist */,
+				5232F74418F2403D009EEB77 /* SuperSparrowTests-Info.plist */,
 				5232F74518F2403D009EEB77 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52A711B2195CEFC200CAA2AC /* appirater-master */ = {
+			isa = PBXGroup;
+			children = (
+				52A711B3195CEFC200CAA2AC /* .gitignore */,
+				52A711B4195CEFC200CAA2AC /* Appirater.h */,
+				52A711B5195CEFC200CAA2AC /* Appirater.m */,
+				52A711B6195CEFC200CAA2AC /* Appirater.podspec */,
+				52A711B7195CEFC200CAA2AC /* AppiraterDelegate.h */,
+				52A711B8195CEFC200CAA2AC /* AppiraterLocalizable.strings */,
+				52A711BB195CEFC200CAA2AC /* CHANGELOG.md */,
+				52A711D0195CEFC200CAA2AC /* README.md */,
+			);
+			path = "appirater-master";
 			sourceTree = "<group>";
 		};
 		83C22A01190B7D81009C0A9C /* Sounds */ = {
@@ -245,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5232F71218F2403D009EEB77 /* Supersonic */ = {
+		5232F71218F2403D009EEB77 /* SuperSparrow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "Supersonic" */;
+			buildConfigurationList = 5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrow" */;
 			buildPhases = (
 				5232F70F18F2403D009EEB77 /* Sources */,
 				5232F71018F2403D009EEB77 /* Frameworks */,
@@ -257,14 +320,14 @@
 			);
 			dependencies = (
 			);
-			name = Supersonic;
+			name = SuperSparrow;
 			productName = Supersonic;
-			productReference = 5232F71318F2403D009EEB77 /* Supersonic.app */;
+			productReference = 5232F71318F2403D009EEB77 /* SuperSparrow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5232F73A18F2403D009EEB77 /* SupersonicTests */ = {
+		5232F73A18F2403D009EEB77 /* SuperSparrowTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SupersonicTests" */;
+			buildConfigurationList = 5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrowTests" */;
 			buildPhases = (
 				5232F73718F2403D009EEB77 /* Sources */,
 				5232F73818F2403D009EEB77 /* Frameworks */,
@@ -275,9 +338,9 @@
 			dependencies = (
 				5232F74118F2403D009EEB77 /* PBXTargetDependency */,
 			);
-			name = SupersonicTests;
+			name = SuperSparrowTests;
 			productName = SupersonicTests;
-			productReference = 5232F73B18F2403D009EEB77 /* SupersonicTests.xctest */;
+			productReference = 5232F73B18F2403D009EEB77 /* SuperSparrowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +350,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "John King";
+				ORGANIZATIONNAME = SpitballStudios;
 				TargetAttributes = {
 					5232F71218F2403D009EEB77 = {
 						DevelopmentTeam = 6QC3FS38XU;
@@ -297,21 +360,52 @@
 					};
 				};
 			};
-			buildConfigurationList = 5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "Supersonic" */;
+			buildConfigurationList = 5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "SuperSparrow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				nl,
+				pl,
+				"pt-BR",
+				pt,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 5232F70A18F2403D009EEB77;
 			productRefGroup = 5232F71418F2403D009EEB77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5232F71218F2403D009EEB77 /* Supersonic */,
-				5232F73A18F2403D009EEB77 /* SupersonicTests */,
+				5232F71218F2403D009EEB77 /* SuperSparrow */,
+				5232F73A18F2403D009EEB77 /* SuperSparrowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,12 +417,17 @@
 			files = (
 				520026F218FB704E00FE6850 /* README.md in Resources */,
 				83C22A0B190B8705009C0A9C /* SuperSparrow.wav in Resources */,
+				52A711DE195CEFC200CAA2AC /* AppiraterLocalizable.strings in Resources */,
 				5232F72318F2403D009EEB77 /* InfoPlist.strings in Resources */,
 				520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */,
+				52A711DF195CEFC200CAA2AC /* CHANGELOG.md in Resources */,
+				52A711DB195CEFC200CAA2AC /* .gitignore in Resources */,
 				83C22A09190B80F3009C0A9C /* select.wav in Resources */,
 				52203CA918F616EF001D4575 /* PlayerData.plist in Resources */,
 				5232F73618F2403D009EEB77 /* Images.xcassets in Resources */,
 				83C22A05190B7D81009C0A9C /* electricity.wav in Resources */,
+				52A711DD195CEFC200CAA2AC /* Appirater.podspec in Resources */,
+				52A711E0195CEFC200CAA2AC /* README.md in Resources */,
 				83C22A07190B7D81009C0A9C /* whoosh.wav in Resources */,
 				5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */,
 			);
@@ -349,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A711DC195CEFC200CAA2AC /* Appirater.m in Sources */,
 				5232F72F18F2403D009EEB77 /* ViewController.m in Sources */,
 				5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */,
 				5232F72518F2403D009EEB77 /* main.m in Sources */,
@@ -364,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5232F74918F2403D009EEB77 /* SupersonicTests.m in Sources */,
+				5232F74918F2403D009EEB77 /* SuperSparrowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +473,7 @@
 /* Begin PBXTargetDependency section */
 		5232F74118F2403D009EEB77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5232F71218F2403D009EEB77 /* Supersonic */;
+			target = 5232F71218F2403D009EEB77 /* SuperSparrow */;
 			targetProxy = 5232F74018F2403D009EEB77 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -401,6 +501,45 @@
 				5232F74618F2403D009EEB77 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		52A711B8195CEFC200CAA2AC /* AppiraterLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52A711B9195CEFC200CAA2AC /* ar */,
+				52A711BA195CEFC200CAA2AC /* ca */,
+				52A711BC195CEFC200CAA2AC /* cs */,
+				52A711BD195CEFC200CAA2AC /* da */,
+				52A711BE195CEFC200CAA2AC /* de */,
+				52A711BF195CEFC200CAA2AC /* el */,
+				52A711C0195CEFC200CAA2AC /* en */,
+				52A711C1195CEFC200CAA2AC /* es */,
+				52A711C2195CEFC200CAA2AC /* fi */,
+				52A711C3195CEFC200CAA2AC /* fr */,
+				52A711C4195CEFC200CAA2AC /* he */,
+				52A711C5195CEFC200CAA2AC /* hu */,
+				52A711C6195CEFC200CAA2AC /* id */,
+				52A711C7195CEFC200CAA2AC /* it */,
+				52A711C8195CEFC200CAA2AC /* ja */,
+				52A711C9195CEFC200CAA2AC /* ko */,
+				52A711CA195CEFC200CAA2AC /* ms */,
+				52A711CB195CEFC200CAA2AC /* nb */,
+				52A711CC195CEFC200CAA2AC /* nl */,
+				52A711CD195CEFC200CAA2AC /* pl */,
+				52A711CE195CEFC200CAA2AC /* pt-BR */,
+				52A711CF195CEFC200CAA2AC /* pt */,
+				52A711D1195CEFC200CAA2AC /* ro */,
+				52A711D2195CEFC200CAA2AC /* ru */,
+				52A711D3195CEFC200CAA2AC /* sk */,
+				52A711D4195CEFC200CAA2AC /* sv */,
+				52A711D5195CEFC200CAA2AC /* th */,
+				52A711D6195CEFC200CAA2AC /* tr */,
+				52A711D7195CEFC200CAA2AC /* uk */,
+				52A711D8195CEFC200CAA2AC /* vi */,
+				52A711D9195CEFC200CAA2AC /* zh-Hans */,
+				52A711DA195CEFC200CAA2AC /* zh-Hant */,
+			);
+			name = AppiraterLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -483,15 +622,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
+				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSparrow;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,15 +643,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "Supersonic/Supersonic-Info.plist";
+				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
+				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperSparrow;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -533,8 +672,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SupersonicTests/SupersonicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SupersonicTests/SuperSparrowTests-Info.plist";
+				PRODUCT_NAME = SuperSparrowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -551,8 +690,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/Supersonic-Prefix.pch";
-				INFOPLIST_FILE = "SupersonicTests/SupersonicTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SupersonicTests/SuperSparrowTests-Info.plist";
+				PRODUCT_NAME = SuperSparrowTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -561,7 +700,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "Supersonic" */ = {
+		5232F70E18F2403D009EEB77 /* Build configuration list for PBXProject "SuperSparrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F74A18F2403D009EEB77 /* Debug */,
@@ -570,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "Supersonic" */ = {
+		5232F74C18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F74D18F2403D009EEB77 /* Debug */,
@@ -579,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SupersonicTests" */ = {
+		5232F74F18F2403D009EEB77 /* Build configuration list for PBXNativeTarget "SuperSparrowTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5232F75018F2403D009EEB77 /* Debug */,
