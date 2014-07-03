@@ -195,12 +195,11 @@ NSNumber *highScore;
             if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
                     [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
             }
-            selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+            selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
             [skView presentScene:scene transition:transition];
-            return;
         }
         if (node.zPosition!=2) {
             continue;

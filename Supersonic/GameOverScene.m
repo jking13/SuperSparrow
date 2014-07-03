@@ -148,7 +148,7 @@ NSString *deathFont = @"Cochin-BoldItalic";
     
     
     
-    //[[Chartboost sharedChartboost] showInterstitial];
+    [[Chartboost sharedChartboost] showInterstitial];
     [Appirater userDidSignificantEvent:YES];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

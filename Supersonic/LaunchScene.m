@@ -35,7 +35,8 @@
         SKView * skView = (SKView *)self.view;
         SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-        [skView presentScene:scene];
+        SKTransition *transition = [SKTransition fadeWithDuration:1];
+        [skView presentScene:scene transition:transition];
     }];
 
 }

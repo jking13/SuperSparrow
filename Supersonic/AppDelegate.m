@@ -41,7 +41,7 @@
     [Appirater setUsesUntilPrompt:5];
     [Appirater setSignificantEventsUntilPrompt:25];
     [Appirater setTimeBeforeReminding:2];
-    [Appirater setDebug:YES];
+    [Appirater setDebug:NO];
     
     return YES;
 }
@@ -75,7 +75,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    /*Chartboost *cb = [Chartboost sharedChartboost];
+    Chartboost *cb = [Chartboost sharedChartboost];
     
     cb.appId = @"534b32061873da0206baec0c";
     cb.appSignature = @"67d555ac0a323c2dbd02478edb63aafd627231ba";
@@ -90,7 +90,7 @@
     // Cache an interstitial at the default location
     [cb cacheInterstitial];
     
-    [cb cacheMoreApps];*/
+    [cb cacheMoreApps];
 }
 
 /*
@@ -108,7 +108,7 @@
 - (void)didDismissInterstitial:(NSString *)location {
     NSLog(@"dismissed interstitial at location %@", location);
     
-  //  [[Chartboost sharedChartboost] cacheInterstitial:location];
+    [[Chartboost sharedChartboost] cacheInterstitial:location];
 }
 
 /*
@@ -126,7 +126,7 @@
 - (void)didDismissMoreApps {
     NSLog(@"dismissed more apps page, re-caching now");
     
-    //[[Chartboost sharedChartboost] cacheMoreApps];
+    [[Chartboost sharedChartboost] cacheMoreApps];
 }
 
 @end
