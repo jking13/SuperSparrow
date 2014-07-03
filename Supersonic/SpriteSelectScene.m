@@ -24,12 +24,11 @@ NSNumber *highScore;
         selectedButton=NULL;
         //set background color
         self.backgroundColor=[SKColor whiteColor];
-        
         //bring in data
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         self.playerData = appDelegate.playerData;
         highScore = [self.playerData objectForKey:@"HighScore"];
-        spriteNames = @[@"SuperSparrow",@"GreenSparrow",@"BatSparrow",@"PinkSparrow",@"WolSparrow",@"IronSparrow"];
+        spriteNames = @[@"SuperSparrow",@"PinkSparrow",@"GreenSparrow",@"BatSparrow",@"WolSparrow",@"IronSparrow"];
         
         //set background image
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"city.png"];

@@ -256,7 +256,7 @@
 		<key>5</key>
 		<string>pinkstreak.png</string>
 		<key>ScoreRequirement</key>
-		<integer>20</integer>
+		<integer>0</integer>
 	</dict>
 	<key>BatSparrow</key>
 	<dict>
@@ -271,7 +271,7 @@
 		<key>5</key>
 		<string>blackstreak.png</string>
 		<key>ScoreRequirement</key>
-		<integer>30</integer>
+		<integer>20</integer>
 	</dict>
 	<key>IronSparrow</key>
 	<dict>
@@ -286,7 +286,7 @@
 		<key>5</key>
 		<string>yellowstreak.png</string>
 		<key>ScoreRequirement</key>
-		<integer>40</integer>
+		<integer>50</integer>
 	</dict>
 	<key>WolSparrow</key>
 	<dict>
@@ -301,7 +301,7 @@
 		<key>5</key>
 		<string>bluestreak.png</string>
 		<key>ScoreRequirement</key>
-		<integer>50</integer>
+		<integer>30</integer>
 	</dict>
 	<key>SelectedSprite</key>
 	<string>SuperSparrow</string>
