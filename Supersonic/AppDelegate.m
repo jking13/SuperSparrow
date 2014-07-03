@@ -53,6 +53,7 @@
     NSString *plistFilePathInDocumentsDirectory = [documentsDirectoryPath stringByAppendingPathComponent:@"PlayerData.plist"];
     
     [self.playerData writeToFile:plistFilePathInDocumentsDirectory atomically:YES];
+    sleep(5);
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
