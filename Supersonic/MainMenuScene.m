@@ -8,11 +8,16 @@
 
 #import "MainMenuScene.h"
 #import "AppDelegate.h"
-
+#import "Appirater.h"
 SKNode *selectedButton;
 @implementation MainMenuScene
 
 NSString *fontName =@"Helvetica-Oblique";
+- (void)didMoveToView:(SKView *)view
+{
+    [super didMoveToView:view];
+    [Appirater appLaunched:true];
+}
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         //bring in data
@@ -104,8 +109,6 @@ NSString *fontName =@"Helvetica-Oblique";
             [self addChild:unmuteMusicButton];
         }
         
-        
-
         return self;
     }
     return NULL;

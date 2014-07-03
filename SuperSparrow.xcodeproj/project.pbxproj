@@ -14,6 +14,7 @@
 		520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EC18FB704E00FE6850 /* CHANGELOG.md */; };
 		520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026EE18FB704E00FE6850 /* libChartboost.a */; };
 		520026F218FB704E00FE6850 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EF18FB704E00FE6850 /* README.md */; };
+		52170CD11966046F00D99DCA /* LaunchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52170CD01966046F00D99DCA /* LaunchScene.m */; };
 		52203CA718F61651001D4575 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CA618F61651001D4575 /* MainMenuScene.m */; };
 		52203CA918F616EF001D4575 /* PlayerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52203CA818F616EF001D4575 /* PlayerData.plist */; };
 		52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CAB18F61823001D4575 /* SpriteSelectScene.m */; };
@@ -66,6 +67,8 @@
 		520026ED18FB704E00FE6850 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
 		520026EE18FB704E00FE6850 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
 		520026EF18FB704E00FE6850 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		52170CCF1966046F00D99DCA /* LaunchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScene.h; sourceTree = "<group>"; };
+		52170CD01966046F00D99DCA /* LaunchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScene.m; sourceTree = "<group>"; };
 		52203CA518F61651001D4575 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		52203CA618F61651001D4575 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		52203CA818F616EF001D4575 /* PlayerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerData.plist; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 				5232F72A18F2403D009EEB77 /* Main.storyboard */,
 				5232F72D18F2403D009EEB77 /* ViewController.h */,
 				5232F72E18F2403D009EEB77 /* ViewController.m */,
+				52170CCF1966046F00D99DCA /* LaunchScene.h */,
+				52170CD01966046F00D99DCA /* LaunchScene.m */,
 				5232F75218F387FB009EEB77 /* MainGameScene.h */,
 				5232F75318F387FB009EEB77 /* MainGameScene.m */,
 				5232F75518F4EAD4009EEB77 /* Ceiling.h */,
@@ -451,6 +456,7 @@
 				52A711DC195CEFC200CAA2AC /* Appirater.m in Sources */,
 				5232F72F18F2403D009EEB77 /* ViewController.m in Sources */,
 				5232F72918F2403D009EEB77 /* AppDelegate.m in Sources */,
+				52170CD11966046F00D99DCA /* LaunchScene.m in Sources */,
 				5232F72518F2403D009EEB77 /* main.m in Sources */,
 				52203CAC18F61823001D4575 /* SpriteSelectScene.m in Sources */,
 				5232F75418F387FB009EEB77 /* MainGameScene.m in Sources */,

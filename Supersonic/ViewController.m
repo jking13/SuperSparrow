@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MainMenuScene.h"
+#import "LaunchScene.h"
 @import AVFoundation;
 
 @implementation ViewController
@@ -29,7 +29,7 @@
     if (!skView.scene) {
         
         // Create and configure the scene.
-        SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
+        SKScene * scene = [LaunchScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         
         // Present the scene.
