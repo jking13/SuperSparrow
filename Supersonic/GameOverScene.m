@@ -178,6 +178,9 @@ NSString *deathFont = @"Cochin-BoldItalic";
     }
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (selectedButton!=NULL) {
+        selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
+    }
     SKTransition *transition = [SKTransition fadeWithDuration:1];
     [transition setPausesOutgoingScene:true];
     [transition setPausesIncomingScene:true];
@@ -192,7 +195,6 @@ NSString *deathFont = @"Cochin-BoldItalic";
             if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
                     [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
             }
-            selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
@@ -205,9 +207,7 @@ NSString *deathFont = @"Cochin-BoldItalic";
                 return;
             if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
                 [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
-            }
-            selectedButton.position = CGPointMake(selectedButton.position.x+3, selectedButton.position.y-5);
-            SKView * skView = (SKView *)self.view;
+            }            SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
             [skView presentScene:scene transition:transition];

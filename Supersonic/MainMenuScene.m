@@ -142,10 +142,10 @@ NSString *fontName =@"Helvetica-Oblique";
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (selectedButton==NULL)
         return;
+    selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
     SKTransition *transition = [SKTransition fadeWithDuration:1];
     [transition setPausesOutgoingScene:true];
     [transition setPausesIncomingScene:true];
-    selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
     if([[self.playerData objectForKey:@"isMuted"] isEqualToString:@"false"]) {
             [self runAction:[SKAction playSoundFileNamed:@"select.wav" waitForCompletion:NO]];
     }
