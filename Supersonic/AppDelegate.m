@@ -37,9 +37,9 @@
     self.playerData = pdata;
     
     [Appirater setAppId:@"896447818"];//this needs to be changed to our app id
-    [Appirater setDaysUntilPrompt:7];
+    [Appirater setDaysUntilPrompt:3];
     [Appirater setUsesUntilPrompt:5];
-    [Appirater setSignificantEventsUntilPrompt:25];
+    [Appirater setSignificantEventsUntilPrompt:15];
     [Appirater setTimeBeforeReminding:2];
     [Appirater setDebug:NO];
     
