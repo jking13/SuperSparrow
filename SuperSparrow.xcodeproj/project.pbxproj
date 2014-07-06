@@ -84,7 +84,6 @@
 		5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperSparrow-Info.plist"; sourceTree = "<group>"; };
 		5232F72218F2403D009EEB77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5232F72418F2403D009EEB77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supersonic-Prefix.pch"; sourceTree = "<group>"; };
 		5232F72718F2403D009EEB77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5232F72818F2403D009EEB77 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5232F72B18F2403D009EEB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -259,7 +258,6 @@
 				5232F72018F2403D009EEB77 /* SuperSparrow-Info.plist */,
 				5232F72118F2403D009EEB77 /* InfoPlist.strings */,
 				5232F72418F2403D009EEB77 /* main.m */,
-				5232F72618F2403D009EEB77 /* Supersonic-Prefix.pch */,
 				52203CA818F616EF001D4575 /* PlayerData.plist */,
 			);
 			name = "Supporting Files";
@@ -583,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -615,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -630,7 +628,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
 				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",
@@ -651,7 +649,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supersonic/SuperSparrow-Prefix.pch";
 				INFOPLIST_FILE = "Supersonic/SuperSparrow-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supersonic/Chartboost/Chartboost",

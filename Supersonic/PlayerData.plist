@@ -308,6 +308,6 @@
 	<key>HighScore</key>
 	<integer>0</integer>
 	<key>Safezone</key>
-	<integer>60</integer>
+	<integer>55</integer>
 </dict>
 </plist>
