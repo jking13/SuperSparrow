@@ -36,7 +36,7 @@
     }
     self.playerData = pdata;
     
-    [Appirater setAppId:@"567173760"];//this needs to be changed to our app id
+    [Appirater setAppId:@"896447818"];//this needs to be changed to our app id
     [Appirater setDaysUntilPrompt:7];
     [Appirater setUsesUntilPrompt:5];
     [Appirater setSignificantEventsUntilPrompt:25];
