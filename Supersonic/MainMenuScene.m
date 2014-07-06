@@ -16,7 +16,7 @@ NSString *fontName =@"Helvetica-Oblique";
 - (void)didMoveToView:(SKView *)view
 {
     [super didMoveToView:view];
-    [Appirater appLaunched:true];
+    [Appirater appLaunched:YES];
 }
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
