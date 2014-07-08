@@ -94,6 +94,9 @@ NSString *deathFont = @"Cochin-BoldItalic";
 -(void)setScoreAndFinishInit:(int) score
 {
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.isGameOverScreen = true;
+    
     self.lastScore=[NSNumber numberWithInt:score];
     NSNumber *highScore = [self.playerData objectForKey:@"HighScore"];
     NSNumber *deathCount = [self.playerData objectForKey:@"DeathCount"];
@@ -146,9 +149,9 @@ NSString *deathFont = @"Cochin-BoldItalic";
     [deathNode setPosition:CGPointMake(logoBackground.position.x+logoBackground.size.width, deathNode.frame.size.height)];
     [self addChild:deathNode];
     
-    
-    
-    [[Chartboost sharedChartboost] showInterstitial];
+    Chartboost *cb = [Chartboost sharedChartboost];
+    if([cb hasCachedInterstitial:@"GameOver"])
+        [cb showInterstitial:@"GameOver"];
     [Appirater userDidSignificantEvent:YES];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -178,6 +181,7 @@ NSString *deathFont = @"Cochin-BoldItalic";
     }
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (selectedButton!=NULL) {
         selectedButton.position = CGPointMake(selectedButton.position.x-3, selectedButton.position.y+5);
     }
@@ -198,7 +202,9 @@ NSString *deathFont = @"Cochin-BoldItalic";
             SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainMenuScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
+            appDelegate.isGameOverScreen = false;
             [skView presentScene:scene transition:transition];
+            
             return;
         }
         //replay
@@ -210,6 +216,7 @@ NSString *deathFont = @"Cochin-BoldItalic";
             }            SKView * skView = (SKView *)self.view;
             SKScene * scene = [MainGameScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
+            appDelegate.isGameOverScreen = false;
             [skView presentScene:scene transition:transition];
             return;
         }

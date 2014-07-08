@@ -11,9 +11,12 @@
 		520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E418FB684600FE6850 /* SystemConfiguration.framework */; };
 		520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E618FB686E00FE6850 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026E818FB687E00FE6850 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EC18FB704E00FE6850 /* CHANGELOG.md */; };
-		520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520026EE18FB704E00FE6850 /* libChartboost.a */; };
-		520026F218FB704E00FE6850 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520026EF18FB704E00FE6850 /* README.md */; };
+		520FFB27196B65F1008335C6 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 520FFB23196B65F1008335C6 /* CHANGELOG.md */; };
+		520FFB28196B65F1008335C6 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520FFB25196B65F1008335C6 /* libChartboost.a */; };
+		520FFB29196B65F1008335C6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 520FFB26196B65F1008335C6 /* README.md */; };
+		520FFB2B196B6617008335C6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520FFB2A196B6617008335C6 /* CoreMedia.framework */; };
+		520FFB2D196B6624008335C6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520FFB2C196B6624008335C6 /* AVFoundation.framework */; };
+		520FFB2F196B662F008335C6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520FFB2E196B662F008335C6 /* CoreData.framework */; };
 		52170CD11966046F00D99DCA /* LaunchScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52170CD01966046F00D99DCA /* LaunchScene.m */; };
 		52203CA718F61651001D4575 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52203CA618F61651001D4575 /* MainMenuScene.m */; };
 		52203CA918F616EF001D4575 /* PlayerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52203CA818F616EF001D4575 /* PlayerData.plist */; };
@@ -63,10 +66,18 @@
 		520026E418FB684600FE6850 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		520026E618FB686E00FE6850 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		520026E818FB687E00FE6850 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		520026EC18FB704E00FE6850 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		520026ED18FB704E00FE6850 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
-		520026EE18FB704E00FE6850 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
-		520026EF18FB704E00FE6850 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		520FFB1E196B65F1008335C6 /* CBMoreAppsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMoreAppsButton.h; sourceTree = "<group>"; };
+		520FFB1F196B65F1008335C6 /* CBNewsfeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNewsfeed.h; sourceTree = "<group>"; };
+		520FFB20196B65F1008335C6 /* CBNewsfeedUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNewsfeedUI.h; sourceTree = "<group>"; };
+		520FFB21196B65F1008335C6 /* CBPostInstallAnalyticsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPostInstallAnalyticsTracker.h; sourceTree = "<group>"; };
+		520FFB22196B65F1008335C6 /* CBStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStory.h; sourceTree = "<group>"; };
+		520FFB23196B65F1008335C6 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		520FFB24196B65F1008335C6 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
+		520FFB25196B65F1008335C6 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		520FFB26196B65F1008335C6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		520FFB2A196B6617008335C6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		520FFB2C196B6624008335C6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		520FFB2E196B662F008335C6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		52170CCF1966046F00D99DCA /* LaunchScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScene.h; sourceTree = "<group>"; };
 		52170CD01966046F00D99DCA /* LaunchScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScene.m; sourceTree = "<group>"; };
 		52203CA518F61651001D4575 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -150,6 +161,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520FFB2F196B662F008335C6 /* CoreData.framework in Frameworks */,
+				520FFB2D196B6624008335C6 /* AVFoundation.framework in Frameworks */,
+				520FFB2B196B6617008335C6 /* CoreMedia.framework in Frameworks */,
 				520026E918FB687E00FE6850 /* StoreKit.framework in Frameworks */,
 				520026E718FB686E00FE6850 /* AdSupport.framework in Frameworks */,
 				520026E518FB684600FE6850 /* SystemConfiguration.framework in Frameworks */,
@@ -157,7 +171,7 @@
 				5232F71918F2403D009EEB77 /* CoreGraphics.framework in Frameworks */,
 				5232F71B18F2403D009EEB77 /* UIKit.framework in Frameworks */,
 				5232F71D18F2403D009EEB77 /* SpriteKit.framework in Frameworks */,
-				520026F118FB704E00FE6850 /* libChartboost.a in Frameworks */,
+				520FFB28196B65F1008335C6 /* libChartboost.a in Frameworks */,
 				5232F71718F2403D009EEB77 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,13 +189,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		520026EB18FB704E00FE6850 /* Chartboost */ = {
+		520FFB1D196B65F1008335C6 /* Chartboost */ = {
 			isa = PBXGroup;
 			children = (
-				520026EC18FB704E00FE6850 /* CHANGELOG.md */,
-				520026ED18FB704E00FE6850 /* Chartboost.h */,
-				520026EE18FB704E00FE6850 /* libChartboost.a */,
-				520026EF18FB704E00FE6850 /* README.md */,
+				520FFB1E196B65F1008335C6 /* CBMoreAppsButton.h */,
+				520FFB1F196B65F1008335C6 /* CBNewsfeed.h */,
+				520FFB20196B65F1008335C6 /* CBNewsfeedUI.h */,
+				520FFB21196B65F1008335C6 /* CBPostInstallAnalyticsTracker.h */,
+				520FFB22196B65F1008335C6 /* CBStory.h */,
+				520FFB23196B65F1008335C6 /* CHANGELOG.md */,
+				520FFB24196B65F1008335C6 /* Chartboost.h */,
+				520FFB25196B65F1008335C6 /* libChartboost.a */,
+				520FFB26196B65F1008335C6 /* README.md */,
 			);
 			path = Chartboost;
 			sourceTree = "<group>";
@@ -209,6 +228,9 @@
 		5232F71518F2403D009EEB77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				520FFB2E196B662F008335C6 /* CoreData.framework */,
+				520FFB2C196B6624008335C6 /* AVFoundation.framework */,
+				520FFB2A196B6617008335C6 /* CoreMedia.framework */,
 				83C229FF190B7776009C0A9C /* AudioToolbox.framework */,
 				520026E818FB687E00FE6850 /* StoreKit.framework */,
 				520026E618FB686E00FE6850 /* AdSupport.framework */,
@@ -243,8 +265,8 @@
 				52203CAB18F61823001D4575 /* SpriteSelectScene.m */,
 				52203CAD18F77AF0001D4575 /* GameOverScene.h */,
 				52203CAE18F77AF0001D4575 /* GameOverScene.m */,
+				520FFB1D196B65F1008335C6 /* Chartboost */,
 				52A711B2195CEFC200CAA2AC /* appirater-master */,
-				520026EB18FB704E00FE6850 /* Chartboost */,
 				5232F73518F2403D009EEB77 /* Images.xcassets */,
 				5232F71F18F2403D009EEB77 /* Supporting Files */,
 			);
@@ -418,19 +440,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520026F218FB704E00FE6850 /* README.md in Resources */,
 				83C22A0B190B8705009C0A9C /* SuperSparrow.wav in Resources */,
 				52A711DE195CEFC200CAA2AC /* AppiraterLocalizable.strings in Resources */,
 				5232F72318F2403D009EEB77 /* InfoPlist.strings in Resources */,
-				520026F018FB704E00FE6850 /* CHANGELOG.md in Resources */,
 				52A711DF195CEFC200CAA2AC /* CHANGELOG.md in Resources */,
 				52A711DB195CEFC200CAA2AC /* .gitignore in Resources */,
+				520FFB27196B65F1008335C6 /* CHANGELOG.md in Resources */,
 				83C22A09190B80F3009C0A9C /* select.wav in Resources */,
 				52203CA918F616EF001D4575 /* PlayerData.plist in Resources */,
 				5232F73618F2403D009EEB77 /* Images.xcassets in Resources */,
 				83C22A05190B7D81009C0A9C /* electricity.wav in Resources */,
 				52A711DD195CEFC200CAA2AC /* Appirater.podspec in Resources */,
 				52A711E0195CEFC200CAA2AC /* README.md in Resources */,
+				520FFB29196B65F1008335C6 /* README.md in Resources */,
 				83C22A07190B7D81009C0A9C /* whoosh.wav in Resources */,
 				5232F72C18F2403D009EEB77 /* Main.storyboard in Resources */,
 			);
@@ -635,7 +657,7 @@
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
 				PRODUCT_NAME = SuperSparrow;
-				PROVISIONING_PROFILE = "B8CF20A2-3CA0-4549-9AC3-33DD5E3108FF";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -657,7 +679,7 @@
 					"$(PROJECT_DIR)/Supersonic/Chartboost",
 				);
 				PRODUCT_NAME = SuperSparrow;
-				PROVISIONING_PROFILE = "B8CF20A2-3CA0-4549-9AC3-33DD5E3108FF";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

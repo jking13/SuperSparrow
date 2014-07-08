@@ -16,4 +16,5 @@
 @property (strong, nonatomic) NSMutableDictionary *playerData;
 @property (strong, nonatomic) Chartboost *cb;
 @property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+@property BOOL isGameOverScreen;
 @end

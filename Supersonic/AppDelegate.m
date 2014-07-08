@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.isGameOverScreen = false;
     NSError *error;
     NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"SuperSparrow" withExtension:@"wav"];
     self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
@@ -73,27 +74,47 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+- (void)didFailToLoadInterstitial:(NSString *)location withError:(CBLoadError)error {
+    switch(error){
+        case CBLoadErrorInternetUnavailable: {
+            NSLog(@"Failed to load Interstitial, no Internet connection !");
+        } break;
+        case CBLoadErrorInternal: {
+            NSLog(@"Failed to load Interstitial, internal error !");
+        } break;
+        case CBLoadErrorNetworkFailure: {
+            NSLog(@"Failed to load Interstitial, network error !");
+        } break;
+        case CBLoadErrorWrongOrientation: {
+            NSLog(@"Failed to load Interstitial, wrong orientation !");
+        } break;
+        case CBLoadErrorTooManyConnections: {
+            NSLog(@"Failed to load Interstitial, too many connections !");
+        } break;
+        case CBLoadErrorFirstSessionInterstitialsDisabled: {
+            NSLog(@"Failed to load Interstitial, first session !");
+        } break;
+        case CBLoadErrorNoAdFound : {
+            NSLog(@"Failed to load Interstitial, no ad found !");
+        } break;
+        case CBLoadErrorSessionNotStarted : {
+            NSLog(@"Failed to load Interstitial, session not started !");
+        } break;
+        default: {
+            NSLog(@"Failed to load Interstitial, unknown error !");
+        }
+    }
+}
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    Chartboost *cb = [Chartboost sharedChartboost];
-    
-    cb.appId = @"534b32061873da0206baec0c";
-    cb.appSignature = @"67d555ac0a323c2dbd02478edb63aafd627231ba";
-    
-    // Required for use of delegate methods. See "Advanced Topics" section below.
-    cb.delegate = self;
-    
-    // Begin a user session. Must not be dependent on user actions or any prior network requests.
-    // Must be called every time your app becomes active.
-    [cb startSession];
-    
-    // Cache an interstitial at the default location
-    [cb cacheInterstitial];
-    
-    [cb cacheMoreApps];
+    self.isGameOverScreen = false;
+    [Chartboost startWithAppId:@"534b32061873da0206baec0c" appSignature:@"67d555ac0a323c2dbd02478edb63aafd627231ba" delegate:self];
+    [[Chartboost sharedChartboost] cacheInterstitial:@"GameOver"];
 }
-
+- (BOOL)shouldDisplayInterstitial:(CBLocation)location
+{
+    return self.isGameOverScreen;
+}
 /*
  * didDismissInterstitial
  *
@@ -111,23 +132,4 @@
     
     [[Chartboost sharedChartboost] cacheInterstitial:location];
 }
-
-/*
- * didDismissMoreApps
- *
- * This is called when the more apps page is dismissed
- *
- * Is fired on:
- * - More Apps click
- * - More Apps close
- *
- * #Pro Tip: Use the delegate method below to immediately re-cache the more apps page
- */
-
-- (void)didDismissMoreApps {
-    NSLog(@"dismissed more apps page, re-caching now");
-    
-    [[Chartboost sharedChartboost] cacheMoreApps];
-}
-
 @end
